@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RydChRHevHyJrXfzDblggWeqTMPx6N9h/3I16kteapk=",
+  "Hash": "2wRnyycrZrHF5luPvMiKAzSEXFTPY8ONs6pZPCSTDqs=",
   "Source": "LibraryWebApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "x2g9e0pmma",
-      "Integrity": "V2hCGlaMedr4aE9kpKqX9zXn3frlWVchLZU9JYxu/ac=",
+      "Fingerprint": "qh88lp6nbg",
+      "Integrity": "AsqoVTpN592kM+Yr4585sSkPXokp2n8v9Ob6nNm0sOg=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\blazor.boot.json"
@@ -262,8 +262,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "ov0hiyi4bo",
-      "Integrity": "tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0=",
+      "Fingerprint": "aakypjnpmk",
+      "Integrity": "MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\bin\\Debug\\net9.0\\LibraryApp.Shared.pdb"
@@ -283,8 +283,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "86cg84qyiv",
-      "Integrity": "oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo=",
+      "Fingerprint": "ijn0ldu7ij",
+      "Integrity": "0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\webcil\\LibraryApp.Shared.wasm"
@@ -304,8 +304,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "amvjed58eg",
-      "Integrity": "0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ=",
+      "Fingerprint": "gp0bhn2m3i",
+      "Integrity": "rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\LibraryWebApp.pdb"
@@ -325,8 +325,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "tmamb9zjbd",
-      "Integrity": "VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U=",
+      "Fingerprint": "2nfe1sy6rt",
+      "Integrity": "rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\webcil\\LibraryWebApp.wasm"
@@ -6317,12 +6317,12 @@
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Runtime.Handles.wasm"
     },
     {
-      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-ov0hiyi4bo.gz",
+      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-aakypjnpmk.gz",
       "SourceId": "LibraryWebApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/LibraryApp.Shared#[.{fingerprint=ov0hiyi4bo}]!.pdb.gz",
+      "RelativePath": "_framework/LibraryApp.Shared#[.{fingerprint=aakypjnpmk}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -6331,8 +6331,8 @@
       "RelatedAsset": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryApp.Shared.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ghrk2tc446",
-      "Integrity": "3KFfRSmpvhX5JcXPRZZ5wByjSklTaaJAv0UwqFU5q9Y=",
+      "Fingerprint": "j7j7f82ojb",
+      "Integrity": "AfRxeQRI/8+Q1yX0j+ChGa23uuv8hbYX+nF3IsWaJxs=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryApp.Shared.pdb"
@@ -6464,7 +6464,7 @@
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.ComponentModel.TypeConverter.wasm"
     },
     {
-      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\e5qdhvujhs-x2g9e0pmma.gz",
+      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\e5qdhvujhs-qh88lp6nbg.gz",
       "SourceId": "LibraryWebApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\",
@@ -6478,8 +6478,8 @@
       "RelatedAsset": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "gmwhj2ndxs",
-      "Integrity": "aKoteYZNgI1fakYZHkA4maGpbjeY500PguX/wtAWM7I=",
+      "Fingerprint": "gkgw5odjj3",
+      "Integrity": "4DD4S9myxyZhB9O9UcCOfFjVWvOdHd+vlB4RZwnifnA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -6821,12 +6821,12 @@
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\dotnet.js"
     },
     {
-      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-tmamb9zjbd.gz",
+      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-2nfe1sy6rt.gz",
       "SourceId": "LibraryWebApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/LibraryWebApp#[.{fingerprint=tmamb9zjbd}]!.wasm.gz",
+      "RelativePath": "_framework/LibraryWebApp#[.{fingerprint=2nfe1sy6rt}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -6835,8 +6835,8 @@
       "RelatedAsset": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "9c5iuolz3y",
-      "Integrity": "iTm3Fj4EfKdaDnp9HwnWOssPe8jG+IUnR8rxs9noIRY=",
+      "Fingerprint": "o9xiimigze",
+      "Integrity": "FP1cxI9MBMyoL04bQBK1lm4bh1ppXPrFUULB5Eolca0=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.wasm"
@@ -7367,12 +7367,12 @@
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-86cg84qyiv.gz",
+      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-ijn0ldu7ij.gz",
       "SourceId": "LibraryWebApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/LibraryApp.Shared#[.{fingerprint=86cg84qyiv}]!.wasm.gz",
+      "RelativePath": "_framework/LibraryApp.Shared#[.{fingerprint=ijn0ldu7ij}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -7381,8 +7381,8 @@
       "RelatedAsset": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryApp.Shared.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "ivsdfmkjnu",
-      "Integrity": "blqfMzHBiSNJ00iBGuuK/SinU9uXec/o6iMduIbZk+Q=",
+      "Fingerprint": "ha7826a8dm",
+      "Integrity": "F2/ZECdZJ5PaQb7nJ6TaMDMrb08qooMZ6VtzFnvgU/w=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryApp.Shared.wasm"
@@ -7619,12 +7619,12 @@
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.ComponentModel.Primitives.wasm"
     },
     {
-      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-amvjed58eg.gz",
+      "Identity": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-gp0bhn2m3i.gz",
       "SourceId": "LibraryWebApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/LibraryWebApp#[.{fingerprint=amvjed58eg}]!.pdb.gz",
+      "RelativePath": "_framework/LibraryWebApp#[.{fingerprint=gp0bhn2m3i}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -7633,8 +7633,8 @@
       "RelatedAsset": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "qe4n0xhp2j",
-      "Integrity": "7hUORnVuu1HoX9Lg0rqMe1H63/E6hFMJ24pM1pgmpoo=",
+      "Fingerprint": "kwnxsnbjvn",
+      "Integrity": "RL/5BwANaRVrmnI1eiUBRBk+MIIYzeoVi7AdckEJWwY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.pdb"
@@ -10789,11 +10789,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"V2hCGlaMedr4aE9kpKqX9zXn3frlWVchLZU9JYxu/ac=\""
+          "Value": "\"AsqoVTpN592kM+Yr4585sSkPXokp2n8v9Ob6nNm0sOg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10803,18 +10803,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-V2hCGlaMedr4aE9kpKqX9zXn3frlWVchLZU9JYxu/ac="
+          "Value": "sha256-AsqoVTpN592kM+Yr4585sSkPXokp2n8v9Ob6nNm0sOg="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\e5qdhvujhs-x2g9e0pmma.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\e5qdhvujhs-qh88lp6nbg.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000080431111"
+          "Quality": "0.000080450523"
         }
       ],
       "ResponseHeaders": [
@@ -10824,15 +10824,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12432"
+          "Value": "12429"
         },
         {
           "Name": "ETag",
-          "Value": "\"aKoteYZNgI1fakYZHkA4maGpbjeY500PguX/wtAWM7I=\""
+          "Value": "\"4DD4S9myxyZhB9O9UcCOfFjVWvOdHd+vlB4RZwnifnA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:32 GMT"
+          "Value": "Wed, 07 May 2025 14:57:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10852,19 +10852,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"V2hCGlaMedr4aE9kpKqX9zXn3frlWVchLZU9JYxu/ac=\""
+          "Value": "W/\"AsqoVTpN592kM+Yr4585sSkPXokp2n8v9Ob6nNm0sOg=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-V2hCGlaMedr4aE9kpKqX9zXn3frlWVchLZU9JYxu/ac="
+          "Value": "sha256-AsqoVTpN592kM+Yr4585sSkPXokp2n8v9Ob6nNm0sOg="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\e5qdhvujhs-x2g9e0pmma.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\e5qdhvujhs-qh88lp6nbg.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10873,7 +10873,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12432"
+          "Value": "12429"
         },
         {
           "Name": "Content-Type",
@@ -10881,11 +10881,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aKoteYZNgI1fakYZHkA4maGpbjeY500PguX/wtAWM7I=\""
+          "Value": "\"4DD4S9myxyZhB9O9UcCOfFjVWvOdHd+vlB4RZwnifnA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:32 GMT"
+          "Value": "Wed, 07 May 2025 14:57:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10903,7 +10903,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aKoteYZNgI1fakYZHkA4maGpbjeY500PguX/wtAWM7I="
+          "Value": "sha256-4DD4S9myxyZhB9O9UcCOfFjVWvOdHd+vlB4RZwnifnA="
         }
       ]
     },
@@ -13727,168 +13727,7 @@
       ]
     },
     {
-      "Route": "_framework/LibraryApp.Shared.86cg84qyiv.wasm",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryApp.Shared.wasm",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6421"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:05 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "86cg84qyiv"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/LibraryApp.Shared.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryApp.Shared.86cg84qyiv.wasm",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-86cg84qyiv.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000380228137"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2629"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"blqfMzHBiSNJ00iBGuuK/SinU9uXec/o6iMduIbZk+Q=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:06 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "86cg84qyiv"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/LibraryApp.Shared.wasm"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryApp.Shared.86cg84qyiv.wasm.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-86cg84qyiv.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2629"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/wasm"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"blqfMzHBiSNJ00iBGuuK/SinU9uXec/o6iMduIbZk+Q=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:06 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "86cg84qyiv"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/LibraryApp.Shared.wasm.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-blqfMzHBiSNJ00iBGuuK/SinU9uXec/o6iMduIbZk+Q="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryApp.Shared.ov0hiyi4bo.pdb",
+      "Route": "_framework/LibraryApp.Shared.aakypjnpmk.pdb",
       "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryApp.Shared.pdb",
       "Selectors": [],
       "ResponseHeaders": [
@@ -13906,11 +13745,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0=\""
+          "Value": "\"MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:03 GMT"
+          "Value": "Wed, 07 May 2025 14:53:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13920,7 +13759,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ov0hiyi4bo"
+          "Value": "aakypjnpmk"
         },
         {
           "Name": "label",
@@ -13928,18 +13767,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0="
+          "Value": "sha256-MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U="
         }
       ]
     },
     {
-      "Route": "_framework/LibraryApp.Shared.ov0hiyi4bo.pdb",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-ov0hiyi4bo.gz",
+      "Route": "_framework/LibraryApp.Shared.aakypjnpmk.pdb",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-aakypjnpmk.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000149992500"
+          "Quality": "0.000149970006"
         }
       ],
       "ResponseHeaders": [
@@ -13949,15 +13788,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6666"
+          "Value": "6667"
         },
         {
           "Name": "ETag",
-          "Value": "\"3KFfRSmpvhX5JcXPRZZ5wByjSklTaaJAv0UwqFU5q9Y=\""
+          "Value": "\"AfRxeQRI/8+Q1yX0j+ChGa23uuv8hbYX+nF3IsWaJxs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:06 GMT"
+          "Value": "Wed, 07 May 2025 14:56:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13977,13 +13816,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0=\""
+          "Value": "W/\"MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ov0hiyi4bo"
+          "Value": "aakypjnpmk"
         },
         {
           "Name": "label",
@@ -13991,13 +13830,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0="
+          "Value": "sha256-MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U="
         }
       ]
     },
     {
-      "Route": "_framework/LibraryApp.Shared.ov0hiyi4bo.pdb.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-ov0hiyi4bo.gz",
+      "Route": "_framework/LibraryApp.Shared.aakypjnpmk.pdb.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-aakypjnpmk.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14006,7 +13845,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6666"
+          "Value": "6667"
         },
         {
           "Name": "Content-Type",
@@ -14014,11 +13853,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3KFfRSmpvhX5JcXPRZZ5wByjSklTaaJAv0UwqFU5q9Y=\""
+          "Value": "\"AfRxeQRI/8+Q1yX0j+ChGa23uuv8hbYX+nF3IsWaJxs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:06 GMT"
+          "Value": "Wed, 07 May 2025 14:56:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14036,7 +13875,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ov0hiyi4bo"
+          "Value": "aakypjnpmk"
         },
         {
           "Name": "label",
@@ -14044,7 +13883,168 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-3KFfRSmpvhX5JcXPRZZ5wByjSklTaaJAv0UwqFU5q9Y="
+          "Value": "sha256-AfRxeQRI/8+Q1yX0j+ChGa23uuv8hbYX+nF3IsWaJxs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryApp.Shared.ijn0ldu7ij.wasm",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryApp.Shared.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6421"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:56:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ijn0ldu7ij"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/LibraryApp.Shared.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryApp.Shared.ijn0ldu7ij.wasm",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-ijn0ldu7ij.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000380662352"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2626"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F2/ZECdZJ5PaQb7nJ6TaMDMrb08qooMZ6VtzFnvgU/w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:56:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ijn0ldu7ij"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/LibraryApp.Shared.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryApp.Shared.ijn0ldu7ij.wasm.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-ijn0ldu7ij.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2626"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F2/ZECdZJ5PaQb7nJ6TaMDMrb08qooMZ6VtzFnvgU/w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:56:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ijn0ldu7ij"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/LibraryApp.Shared.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-F2/ZECdZJ5PaQb7nJ6TaMDMrb08qooMZ6VtzFnvgU/w="
         }
       ]
     },
@@ -14067,11 +14067,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0=\""
+          "Value": "\"MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:03 GMT"
+          "Value": "Wed, 07 May 2025 14:53:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14081,18 +14081,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0="
+          "Value": "sha256-MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U="
         }
       ]
     },
     {
       "Route": "_framework/LibraryApp.Shared.pdb",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-ov0hiyi4bo.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-aakypjnpmk.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000149992500"
+          "Quality": "0.000149970006"
         }
       ],
       "ResponseHeaders": [
@@ -14102,15 +14102,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6666"
+          "Value": "6667"
         },
         {
           "Name": "ETag",
-          "Value": "\"3KFfRSmpvhX5JcXPRZZ5wByjSklTaaJAv0UwqFU5q9Y=\""
+          "Value": "\"AfRxeQRI/8+Q1yX0j+ChGa23uuv8hbYX+nF3IsWaJxs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:06 GMT"
+          "Value": "Wed, 07 May 2025 14:56:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14130,19 +14130,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0=\""
+          "Value": "W/\"MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-tFgGQSjLX7ZTv2FXCSWVRxInbPhtilK5IA2B/NWfUu0="
+          "Value": "sha256-MjBYHAIwGhMxtuzJyD91KyuBoW+l8/9fwoEOviteY7U="
         }
       ]
     },
     {
       "Route": "_framework/LibraryApp.Shared.pdb.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-ov0hiyi4bo.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\dcmm33izyw-aakypjnpmk.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14151,7 +14151,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6666"
+          "Value": "6667"
         },
         {
           "Name": "Content-Type",
@@ -14159,11 +14159,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3KFfRSmpvhX5JcXPRZZ5wByjSklTaaJAv0UwqFU5q9Y=\""
+          "Value": "\"AfRxeQRI/8+Q1yX0j+ChGa23uuv8hbYX+nF3IsWaJxs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:06 GMT"
+          "Value": "Wed, 07 May 2025 14:56:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14181,7 +14181,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3KFfRSmpvhX5JcXPRZZ5wByjSklTaaJAv0UwqFU5q9Y="
+          "Value": "sha256-AfRxeQRI/8+Q1yX0j+ChGa23uuv8hbYX+nF3IsWaJxs="
         }
       ]
     },
@@ -14204,11 +14204,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo=\""
+          "Value": "\"0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:05 GMT"
+          "Value": "Wed, 07 May 2025 14:56:04 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14218,18 +14218,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo="
+          "Value": "sha256-0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig="
         }
       ]
     },
     {
       "Route": "_framework/LibraryApp.Shared.wasm",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-86cg84qyiv.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-ijn0ldu7ij.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000380228137"
+          "Quality": "0.000380662352"
         }
       ],
       "ResponseHeaders": [
@@ -14239,15 +14239,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2629"
+          "Value": "2626"
         },
         {
           "Name": "ETag",
-          "Value": "\"blqfMzHBiSNJ00iBGuuK/SinU9uXec/o6iMduIbZk+Q=\""
+          "Value": "\"F2/ZECdZJ5PaQb7nJ6TaMDMrb08qooMZ6VtzFnvgU/w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:06 GMT"
+          "Value": "Wed, 07 May 2025 14:56:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14267,19 +14267,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo=\""
+          "Value": "W/\"0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-oFldvi2OeQ1qPQodzwXXQfwS5KF0qvM0gVnHX8pRaJo="
+          "Value": "sha256-0l+l4pV0gXb4+kuRrTd0dUefXEkYN0wGVNfQZX3btig="
         }
       ]
     },
     {
       "Route": "_framework/LibraryApp.Shared.wasm.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-86cg84qyiv.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\kespx21kwd-ijn0ldu7ij.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14288,7 +14288,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2629"
+          "Value": "2626"
         },
         {
           "Name": "Content-Type",
@@ -14296,11 +14296,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"blqfMzHBiSNJ00iBGuuK/SinU9uXec/o6iMduIbZk+Q=\""
+          "Value": "\"F2/ZECdZJ5PaQb7nJ6TaMDMrb08qooMZ6VtzFnvgU/w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:28:06 GMT"
+          "Value": "Wed, 07 May 2025 14:56:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14318,310 +14318,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-blqfMzHBiSNJ00iBGuuK/SinU9uXec/o6iMduIbZk+Q="
+          "Value": "sha256-F2/ZECdZJ5PaQb7nJ6TaMDMrb08qooMZ6VtzFnvgU/w="
         }
       ]
     },
     {
-      "Route": "_framework/LibraryWebApp.amvjed58eg.pdb",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "30428"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "amvjed58eg"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/LibraryWebApp.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryWebApp.amvjed58eg.pdb",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-amvjed58eg.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000043961841"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22746"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7hUORnVuu1HoX9Lg0rqMe1H63/E6hFMJ24pM1pgmpoo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "amvjed58eg"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/LibraryWebApp.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryWebApp.amvjed58eg.pdb.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-amvjed58eg.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22746"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7hUORnVuu1HoX9Lg0rqMe1H63/E6hFMJ24pM1pgmpoo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "amvjed58eg"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/LibraryWebApp.pdb.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-7hUORnVuu1HoX9Lg0rqMe1H63/E6hFMJ24pM1pgmpoo="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryWebApp.pdb",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "30428"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:55 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryWebApp.pdb",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-amvjed58eg.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000043961841"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22746"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7hUORnVuu1HoX9Lg0rqMe1H63/E6hFMJ24pM1pgmpoo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-0pjq7Ns1pc8NDDveuXfK9QYwQ0e+SDm5gv+mtStIbUQ="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryWebApp.pdb.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-amvjed58eg.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22746"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"7hUORnVuu1HoX9Lg0rqMe1H63/E6hFMJ24pM1pgmpoo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-7hUORnVuu1HoX9Lg0rqMe1H63/E6hFMJ24pM1pgmpoo="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/LibraryWebApp.tmamb9zjbd.wasm",
+      "Route": "_framework/LibraryWebApp.2nfe1sy6rt.wasm",
       "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -14639,11 +14341,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U=\""
+          "Value": "\"rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:55 GMT"
+          "Value": "Wed, 07 May 2025 14:58:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14653,7 +14355,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tmamb9zjbd"
+          "Value": "2nfe1sy6rt"
         },
         {
           "Name": "label",
@@ -14661,18 +14363,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U="
+          "Value": "sha256-rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY="
         }
       ]
     },
     {
-      "Route": "_framework/LibraryWebApp.tmamb9zjbd.wasm",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-tmamb9zjbd.gz",
+      "Route": "_framework/LibraryWebApp.2nfe1sy6rt.wasm",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-2nfe1sy6rt.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000077369439"
+          "Quality": "0.000077760498"
         }
       ],
       "ResponseHeaders": [
@@ -14682,15 +14384,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12924"
+          "Value": "12859"
         },
         {
           "Name": "ETag",
-          "Value": "\"iTm3Fj4EfKdaDnp9HwnWOssPe8jG+IUnR8rxs9noIRY=\""
+          "Value": "\"FP1cxI9MBMyoL04bQBK1lm4bh1ppXPrFUULB5Eolca0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14710,13 +14412,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U=\""
+          "Value": "W/\"rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tmamb9zjbd"
+          "Value": "2nfe1sy6rt"
         },
         {
           "Name": "label",
@@ -14724,13 +14426,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U="
+          "Value": "sha256-rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY="
         }
       ]
     },
     {
-      "Route": "_framework/LibraryWebApp.tmamb9zjbd.wasm.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-tmamb9zjbd.gz",
+      "Route": "_framework/LibraryWebApp.2nfe1sy6rt.wasm.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-2nfe1sy6rt.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14739,7 +14441,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12924"
+          "Value": "12859"
         },
         {
           "Name": "Content-Type",
@@ -14747,11 +14449,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"iTm3Fj4EfKdaDnp9HwnWOssPe8jG+IUnR8rxs9noIRY=\""
+          "Value": "\"FP1cxI9MBMyoL04bQBK1lm4bh1ppXPrFUULB5Eolca0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14769,7 +14471,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tmamb9zjbd"
+          "Value": "2nfe1sy6rt"
         },
         {
           "Name": "label",
@@ -14777,7 +14479,305 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-iTm3Fj4EfKdaDnp9HwnWOssPe8jG+IUnR8rxs9noIRY="
+          "Value": "sha256-FP1cxI9MBMyoL04bQBK1lm4bh1ppXPrFUULB5Eolca0="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryWebApp.gp0bhn2m3i.pdb",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30344"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:58:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gp0bhn2m3i"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/LibraryWebApp.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryWebApp.gp0bhn2m3i.pdb",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-gp0bhn2m3i.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000044126732"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22661"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RL/5BwANaRVrmnI1eiUBRBk+MIIYzeoVi7AdckEJWwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gp0bhn2m3i"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/LibraryWebApp.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryWebApp.gp0bhn2m3i.pdb.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-gp0bhn2m3i.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22661"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RL/5BwANaRVrmnI1eiUBRBk+MIIYzeoVi7AdckEJWwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gp0bhn2m3i"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/LibraryWebApp.pdb.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RL/5BwANaRVrmnI1eiUBRBk+MIIYzeoVi7AdckEJWwY="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryWebApp.pdb",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\LibraryWebApp.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "30344"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:58:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryWebApp.pdb",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-gp0bhn2m3i.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000044126732"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22661"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RL/5BwANaRVrmnI1eiUBRBk+MIIYzeoVi7AdckEJWwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rBodTFQS5Ni9rbz/fxSxaBe67t8TN88E44NtadtWS5k="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/LibraryWebApp.pdb.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\maatx6vnr2-gp0bhn2m3i.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22661"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RL/5BwANaRVrmnI1eiUBRBk+MIIYzeoVi7AdckEJWwY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RL/5BwANaRVrmnI1eiUBRBk+MIIYzeoVi7AdckEJWwY="
         }
       ]
     },
@@ -14800,11 +14800,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U=\""
+          "Value": "\"rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:55 GMT"
+          "Value": "Wed, 07 May 2025 14:58:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14814,18 +14814,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U="
+          "Value": "sha256-rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY="
         }
       ]
     },
     {
       "Route": "_framework/LibraryWebApp.wasm",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-tmamb9zjbd.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-2nfe1sy6rt.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000077369439"
+          "Quality": "0.000077760498"
         }
       ],
       "ResponseHeaders": [
@@ -14835,15 +14835,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12924"
+          "Value": "12859"
         },
         {
           "Name": "ETag",
-          "Value": "\"iTm3Fj4EfKdaDnp9HwnWOssPe8jG+IUnR8rxs9noIRY=\""
+          "Value": "\"FP1cxI9MBMyoL04bQBK1lm4bh1ppXPrFUULB5Eolca0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14863,19 +14863,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U=\""
+          "Value": "W/\"rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-VX62/+gfkntk49llav3kDLGi9HzIksao36Ctj5EBH3U="
+          "Value": "sha256-rnfSzea6/J4lw6ZnZCBujWWgYwuQ6kppzyFUV/0C/vY="
         }
       ]
     },
     {
       "Route": "_framework/LibraryWebApp.wasm.gz",
-      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-tmamb9zjbd.gz",
+      "AssetFile": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\Debug\\net9.0\\compressed\\hejplwdlvk-2nfe1sy6rt.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14884,7 +14884,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12924"
+          "Value": "12859"
         },
         {
           "Name": "Content-Type",
@@ -14892,11 +14892,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"iTm3Fj4EfKdaDnp9HwnWOssPe8jG+IUnR8rxs9noIRY=\""
+          "Value": "\"FP1cxI9MBMyoL04bQBK1lm4bh1ppXPrFUULB5Eolca0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 07 May 2025 14:45:56 GMT"
+          "Value": "Wed, 07 May 2025 14:58:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14914,7 +14914,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-iTm3Fj4EfKdaDnp9HwnWOssPe8jG+IUnR8rxs9noIRY="
+          "Value": "sha256-FP1cxI9MBMyoL04bQBK1lm4bh1ppXPrFUULB5Eolca0="
         }
       ]
     },

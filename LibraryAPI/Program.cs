@@ -14,6 +14,8 @@ builder.Services.AddDbContext<LibraryDB>(
         options.UseSqlite("Data Source=library.db");
         options.UseLazyLoadingProxies();
     });
+
+builder.Services.AddCors();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -26,8 +28,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
-//app.UseAuthorization();
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

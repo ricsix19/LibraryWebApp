@@ -62,23 +62,23 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        books = await Http.GetFromJsonAsync<List<Book>>("http://localhost:5196/api/books");
+        books = await Http.GetFromJsonAsync<List<Book>>("api/Book");
     }
 
     private async Task AddBook()
     {
-        var response = await Http.PostAsJsonAsync("http://localhost:5196/api/books", newBook);
+        var response = await Http.PostAsJsonAsync("api/Book", newBook);
         if (response.IsSuccessStatusCode)
         {
-            books = await Http.GetFromJsonAsync<List<Book>>("http://localhost:5196/api/books");
+            books = await Http.GetFromJsonAsync<List<Book>>("api/Book");
             newBook = new();
         }
     }
 
     private async Task DeleteBook(int id)
     {
-        await Http.DeleteAsync($"http://localhost:5196/api/books/{id}");
-        books = await Http.GetFromJsonAsync<List<Book>>("http:localhost:5196/api/books");
+        await Http.DeleteAsync($"api/Book/{id}");
+        books = await Http.GetFromJsonAsync<List<Book>>("api/Book");
     }
 
 }
