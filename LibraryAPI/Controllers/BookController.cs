@@ -1,4 +1,5 @@
 ﻿using LibraryAPI.Data;
+using LibraryAPI.Services;
 using LibraryApp.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,11 +10,11 @@ namespace LibraryAPI.Controllers;
 [Route("api/[controller]")]
 public class BookController : ControllerBase
 {
-    private readonly LibraryDB _context;
+    private readonly BookService _service;
 
-    public BookController(LibraryDB context)
+    public BookController(BookService service)
     {
-        _context = context;
+        _service = service;
     }
     
     //HTTP GET
