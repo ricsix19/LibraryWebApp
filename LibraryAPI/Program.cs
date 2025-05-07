@@ -1,11 +1,19 @@
 using LibraryAPI.Data;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<LibraryDB>(options =>
-    options.UseSqlite("Data Source=library.db"));
+builder.Services.AddSerilog(options => options
+    .MinimumLevel.Information()
+    .WriteTo.Console());
 
+builder.Services.AddDbContext<LibraryDB>(
+    options =>
+    {
+        options.UseSqlite("Data Source=library.db");
+        options.UseLazyLoadingProxies();
+    });
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -19,7 +27,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
+//app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

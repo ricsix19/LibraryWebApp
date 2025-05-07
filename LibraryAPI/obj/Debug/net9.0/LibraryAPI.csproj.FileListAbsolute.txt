@@ -156,3 +156,16 @@ C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\obj\Debug\net9.0\refint\Li
 C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\obj\Debug\net9.0\LibraryAPI.pdb
 C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\obj\Debug\net9.0\LibraryAPI.genruntimeconfig.cache
 C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\obj\Debug\net9.0\ref\LibraryAPI.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\LibraryApp.Shared.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\LibraryApp.Shared.pdb
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Castle.Core.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.AspNetCore.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryAPI\bin\Debug\net9.0\Serilog.Sinks.File.dll

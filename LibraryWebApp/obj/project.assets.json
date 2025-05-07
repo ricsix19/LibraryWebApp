@@ -432,6 +432,16 @@
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
         }
+      },
+      "LibraryApp.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/LibraryApp.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryApp.Shared.dll": {}
+        }
       }
     },
     "net9.0/browser-wasm": {
@@ -864,6 +874,16 @@
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
+        }
+      },
+      "LibraryApp.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/LibraryApp.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibraryApp.Shared.dll": {}
         }
       }
     }
@@ -1746,10 +1766,16 @@
         "tools/net9.0/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
         "tools/net9.0/Microsoft.NET.WebAssembly.Webcil.dll"
       ]
+    },
+    "LibraryApp.Shared/1.0.0": {
+      "type": "project",
+      "path": "../LibraryApp.Shared/LibraryApp.Shared.csproj",
+      "msbuildProject": "../LibraryApp.Shared/LibraryApp.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "LibraryApp.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 9.0.2",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 9.0.2",
       "Microsoft.NET.ILLink.Tasks >= 9.0.4",
@@ -1780,7 +1806,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
+              "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
