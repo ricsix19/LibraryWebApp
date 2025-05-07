@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<LibraryContext>(options =>
+builder.Services.AddDbContext<LibraryDB>(options =>
     options.UseSqlite("Data Source=library.db"));
 
 builder.Services.AddControllers();
@@ -23,6 +23,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
 /*
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
