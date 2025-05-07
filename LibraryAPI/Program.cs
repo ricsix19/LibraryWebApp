@@ -1,4 +1,5 @@
 using LibraryAPI.Data;
+using LibraryAPI.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -33,6 +34,8 @@ app.UseHttpsRedirection();
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseAuthorization();
 app.MapControllers();
+
+builder.Services.AddScoped<BookService>();
 
 app.Run();
 

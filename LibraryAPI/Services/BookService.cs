@@ -42,4 +42,19 @@ public class BookService
         await _context.SaveChangesAsync();
         return true;
     }
+    
+    public async Task<bool> UpdateAsync(int id, Book book)
+    {
+        if (id != book.Id)
+            return false;
+
+        var exists = await _context.Books.AnyAsync(b => b.Id == id);
+        if (!exists)
+            return false;
+
+        _context.Entry(book).State = EntityState.Modified;
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
 }
