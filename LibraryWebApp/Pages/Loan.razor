@@ -1,0 +1,89 @@
+﻿@page "/loans"
+@inject HttpClient Http
+
+<h3>Loans</h3>
+
+
+@if (loans == null)
+{
+    <p>Betöltés...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Reader ID</th>
+            <th>Book ID</th>
+            <th>Loan out date</th>
+            <th>Return date</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var loan in loans)
+        {
+            <tr>
+                <td>@loan.UserId</td>
+                <td>@loan.BookId</td>
+                <td>@loan.LoanDate.ToShortDateString()</td>
+                <td>@loan.LoanReturnDate.ToShortDateString()</td>
+                <td><button class="btn btn-danger btn-sm" @onclick="() => DeleteLoan(loan.Id)">🗑️</button></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+<h4>New Loan</h4>
+
+<EditForm Model="@newLoan" OnValidSubmit="AddLoan">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-2">
+        <input class="form-control" type="number" @bind="newLoan.UserId" placeholder="Reader ID" />
+    </div>
+    <div class="mb-2">
+        <input class="form-control" type="number" @bind="newLoan.BookId" placeholder="Book ID" />
+    </div>
+    <div class="mb-2">
+        <input class="form-control" type="date" @bind="newLoan.LoanDate" />
+    </div>
+    <div class="mb-2">
+        <input class="form-control" type="date" @bind="newLoan.LoanReturnDate" />
+    </div>
+    <button class="btn btn-primary" type="submit">Loan out</button>
+</EditForm>
+
+@code
+{
+    private List<LibraryApp.Shared.Models.Loan>? loans;
+
+    private LibraryApp.Shared.Models.Loan newLoan = new()
+    {
+        LoanDate = DateTime.Today,
+        LoanReturnDate = DateTime.Today.AddDays(7)
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        loans = await Http.GetFromJsonAsync<List<LibraryApp.Shared.Models.Loan>>("api/Loan");
+    }
+
+    private async Task AddLoan()
+    {
+        var response = await Http.PostAsJsonAsync("api/Loan", newLoan);
+        if (response.IsSuccessStatusCode)
+        {
+            loans = await Http.GetFromJsonAsync<List<LibraryApp.Shared.Models.Loan>>("api/Loan");
+            newLoan = new() { LoanDate = DateTime.Today, LoanReturnDate = DateTime.Today.AddDays(7) };
+        }
+    }
+
+    private async Task DeleteLoan(int id)
+    {
+        await Http.DeleteAsync($"api/Loan/{id}");
+        loans = await Http.GetFromJsonAsync<List<LibraryApp.Shared.Models.Loan>>("api/Loan");
+    }
+}

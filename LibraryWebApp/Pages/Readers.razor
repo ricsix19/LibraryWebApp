@@ -56,22 +56,22 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        readers = await Http.GetFromJsonAsync<List<Reader>>("http://localhost:5196/api/readers");
+        readers = await Http.GetFromJsonAsync<List<Reader>>("https://localhost:5078/api/readers");
     }
 
     private async Task AddReader()
     {
-        var response = await Http.PostAsJsonAsync("http://localhost:5196/api/readers", newReader);
+        var response = await Http.PostAsJsonAsync("https://localhost:5078/api/readers", newReader);
         if (response.IsSuccessStatusCode)
         {
-            readers = await Http.GetFromJsonAsync<List<Reader>>("http://localhost:5196/api/readers");
+            readers = await Http.GetFromJsonAsync<List<Reader>>("https://localhost:5078/api/readers");
             newReader = new();
         }
     }
 
     private async Task DeleteReader(int id)
     {
-        await Http.DeleteAsync($"http://localhost:5196/api/readers/{id}");
-        readers = await Http.GetFromJsonAsync<List<Reader>>("http://localhost:5196/api/readers");
+        await Http.DeleteAsync($"http://localhost:5078/api/readers/{id}");
+        readers = await Http.GetFromJsonAsync<List<Reader>>("http://localhost:5078/api/readers");
     }
 }
