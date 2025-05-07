@@ -1,0 +1,12 @@
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\bin\Debug\net9.0\LibraryApp.Shared.deps.json
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\bin\Debug\net9.0\LibraryApp.Shared.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\bin\Debug\net9.0\LibraryApp.Shared.pdb
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\LibraryApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\LibraryApp.Shared.AssemblyInfoInputs.cache
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\LibraryApp.Shared.AssemblyInfo.cs
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\LibraryApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\LibraryApp.Shared.sourcelink.json
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\LibraryApp.Shared.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\refint\LibraryApp.Shared.dll
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\LibraryApp.Shared.pdb
+C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryApp.Shared\obj\Debug\net9.0\ref\LibraryApp.Shared.dll

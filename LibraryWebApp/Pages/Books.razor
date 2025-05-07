@@ -1,0 +1,84 @@
+﻿@page "/books"
+@using LibraryApp.Shared.Models
+@inject HttpClient Http
+
+<h3>Books</h3>
+
+@if (books == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Release Year</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var book in books)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Publisher</td>
+                <td>@book.ReleaseYear</td>
+                <td><button class="btn btn-danger btn-sm" @onclick="() => DeleteBook(book.Id)">🗑️</button></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+<h4>Add a new book</h4>
+
+<EditForm Model="@newBook" OnValidSubmit="AddBook">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-2">
+        <input class="form-control" @bind="newBook.Title" placeholder="Title" />
+    </div>
+    <div class="mb-2">
+        <input class="form-control" @bind="newBook.Author" placeholder="Author" />
+    </div>
+    <div class="mb-2">
+        <input class="form-control" @bind="newBook.Publisher" placeholder="Publisher" />
+    </div>
+    <div class="mb-2">
+        <input class="form-control" type="number" @bind="newBook.ReleaseYear" placeholder="Release Year" />
+    </div>
+    <button class="btn btn-primary" type="submit">Add</button>
+</EditForm>
+
+@code {
+    private List<Book>? books;
+    private Book newBook = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        books = await Http.GetFromJsonAsync<List<Book>>("http://localhost:5196/api/books");
+    }
+
+    private async Task AddBook()
+    {
+        var response = await Http.PostAsJsonAsync("http://localhost:5196/api/books", newBook);
+        if (response.IsSuccessStatusCode)
+        {
+            books = await Http.GetFromJsonAsync<List<Book>>("http://localhost:5196/api/books");
+            newBook = new();
+        }
+    }
+
+    private async Task DeleteBook(int id)
+    {
+        await Http.DeleteAsync($"http://localhost:5196/api/books/{id}");
+        books = await Http.GetFromJsonAsync<List<Book>>("http:localhost:5196/api/books");
+    }
+
+}

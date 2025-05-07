@@ -1,0 +1,77 @@
+﻿@page "/readers"
+@using LibraryApp.Shared.Models
+@inject HttpClient Http
+
+<h3>Readers</h3>
+@if (readers == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Date of Birth</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var r in readers)
+        {
+            <tr>
+                <td>@r.Name</td>
+                <td>@r.Location</td>
+                <td>@r.DateOfBirth</td>
+                <td><button class="btn btn-danger btn-sm" @onclick="() => DeleteReader(r.Id)">🗑️</button></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+<h4>Add new Reader</h4>
+
+<EditForm Model="@newReader" OnValidSubmit="AddReader">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-2">
+        <input class="form-control" @bind="newReader.Name" placeholder="Name" />
+    </div>
+    <div class="mb-2">
+        <input class="form-control" @bind="newReader.Location" placeholder="Location" />
+    </div>
+    <div class="mb-2">
+        <input class="form-control" type="number" @bind="newReader.DateOfBirth" placeholder="Date of Birth" />
+    </div>
+    <button class="btn btn-primary" type="submit">Add</button>
+</EditForm>
+
+@code {
+    private List<Reader>? readers;
+    private Reader newReader = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        readers = await Http.GetFromJsonAsync<List<Reader>>("http://localhost:5196/api/readers");
+    }
+
+    private async Task AddReader()
+    {
+        var response = await Http.PostAsJsonAsync("http://localhost:5196/api/readers", newReader);
+        if (response.IsSuccessStatusCode)
+        {
+            readers = await Http.GetFromJsonAsync<List<Reader>>("http://localhost:5196/api/readers");
+            newReader = new();
+        }
+    }
+
+    private async Task DeleteReader(int id)
+    {
+        await Http.DeleteAsync($"http://localhost:5196/api/readers/{id}");
+        readers = await Http.GetFromJsonAsync<List<Reader>>("http://localhost:5196/api/readers");
+    }
+}

@@ -1,5 +1,5 @@
 ﻿using LibraryAPI.Data;
-using LibraryAPI.Models;
+using LibraryApp.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
