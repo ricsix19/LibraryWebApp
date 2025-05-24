@@ -12,41 +12,76 @@ namespace LibraryAPI.Controllers;
 public class BookController : ControllerBase
 {
     private readonly ILogger<IBookService> _logger;
-    private readonly LibraryDB _context;
+    private readonly IBookService _bookService;
 
-    public BookController(ILogger<IBookService> logger, LibraryDB context)
+    public BookController(ILogger<IBookService> logger, IBookService bookService)
     {
         _logger = logger;
-        _context = context;
-    }
-    
-    public async Task<List<Book?>> GetAllBooksAsync()
-    {
-        return await _context.Books.ToListAsync();
+        _bookService = bookService;
     }
 
-    public async Task<Book?> GetBookById(int id)
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Book>>> GetAllBooksAsync()
     {
-        return await _context.Books.FirstOrDefaultAsync(x => x.Id == id);
+        var books = await _bookService.GetAllBooksAsync();
+        return Ok(books); //200-as http informaci kod generalas hogy sikeresen lekertuk az osszes konyvet
     }
 
-    public async Task<ActionResult<Book?>> AddBookAsync(Book? book)
+    [HttpGet("{id:int}", Name = "GetBookById")]
+    public async Task<ActionResult<Book?>> GetBookByIdAsync(int id)
+    {
+        var book = await _bookService.GetBookById(id);
+        if (book == null)
+        {
+            _logger.LogWarning($"Book with id {id} not found");
+            return NotFound();
+        }
+        return Ok(book);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<Book>> CreateBookAsync(Book book)
     {
         if (book == null)
-            return new BadRequestResult();
-    
-        _context.Books.Add(book);
-        await _context.SaveChangesAsync();
-        return new ActionResult<Book?>(book);
+        {
+            return BadRequest();
+        }
+        var result = await _bookService.AddBookAsync(book);
+        if (result.Result is BadRequestResult)
+        {
+            return BadRequest();
+        }
+        
+        return CreatedAtRoute("GetBookById", new { id = result.Result }, result);
     }
 
-    public Task UpdateBooksAsync(int id, Book book)
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateBookAsync(int id, Book book)
     {
-        throw new NotImplementedException();
+        if (book == null || id != book.Id)
+        {
+            return BadRequest();
+        }
+        var existing = await _bookService.GetBookById(id);
+        if (existing == null)
+        {
+            return NotFound();
+        }
+
+        await _bookService.UpdateBooksAsync(id, book);
+        return NoContent();
     }
 
-    public Task<ActionResult<Book>> DeleteBookAsync(int id)
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteBookAsync(int id)
     {
-        throw new NotImplementedException();
+        var existing = await _bookService.GetBookById(id);
+        if (existing == null)
+        {
+            return NotFound();
+        }
+        
+        await _bookService.DeleteBookAsync(id);
+        return NoContent();
     }
 }
