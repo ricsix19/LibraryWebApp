@@ -1,4 +1,5 @@
 using LibraryAPI.Data;
+using LibraryAPI.Interfaces;
 using LibraryAPI.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -20,6 +21,8 @@ builder.Services.AddCors();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IBookService, BookService>();
 
 var app = builder.Build();
 

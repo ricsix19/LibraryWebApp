@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj": {}
+    "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
+    "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj",
         "projectName": "LibraryApp.Shared",
-        "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj",
-        "packagesPath": "C:\\Users\\ricsi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\obj\\",
+        "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj",
+        "packagesPath": "C:\\Users\\mamut\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricsi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\mamut\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,21 +59,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\mamut\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj": {
+    "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
         "projectName": "LibraryWebApp",
-        "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
-        "packagesPath": "C:\\Users\\ricsi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\",
+        "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
+        "packagesPath": "C:\\Users\\mamut\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ricsi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\mamut\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -85,8 +85,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
-                "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj"
+              "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
+                "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj"
               }
             }
           }
@@ -119,13 +119,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )",
+              "version": "[9.0.2, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.4, )",
+              "version": "[9.0.2, )",
               "autoReferenced": true
             }
           },
@@ -143,7 +143,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[9.0.4, 9.0.4]"
+              "version": "[9.0.2, 9.0.2]"
             }
           ],
           "frameworkReferences": {
@@ -151,7 +151,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\mamut\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

@@ -420,13 +420,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.4": {
+      "Microsoft.NET.ILLink.Tasks/9.0.2": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.4": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.2": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -863,13 +863,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.4": {
+      "Microsoft.NET.ILLink.Tasks/9.0.2": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.4": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.2": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -1674,10 +1674,10 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/9.0.4": {
-      "sha512": "xUdlUxiFwXhTYhB4VxKg/IA0+jlZXJPo70LYuMryWbJHdonIpZjw+7DO2B0pWwpXIOs6MlH5WVXPEtfrGEcVZA==",
+    "Microsoft.NET.ILLink.Tasks/9.0.2": {
+      "sha512": "+KFnCLVPicEq99ko0tq+ycTvNLXHw0tImmTZjPloB/DOFLPT56KLfk5aS7wbgXRPzYhXTTBYLGaABea5mke77w==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/9.0.4",
+      "path": "microsoft.net.illink.tasks/9.0.2",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1691,7 +1691,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.9.0.4.nupkg.sha512",
+        "microsoft.net.illink.tasks.9.0.2.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -1725,10 +1725,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.4": {
-      "sha512": "SbawDIBdWK+7UTkiIXquadlWAUPxV88+jytBdVsIFzvJXkxGGQKrufO4KPyYdS4shFtXLZyCuCckNt0YN5hZKw==",
+    "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.2": {
+      "sha512": "svOs6YArbcpL06ZWj+b4hNVlJC5m37ydSgS+1XJWJzQu5fdT7ToEOaik1yiNo9AD357PBEiUJWTlrIcwdF8IeA==",
       "type": "package",
-      "path": "microsoft.net.sdk.webassembly.pack/9.0.4",
+      "path": "microsoft.net.sdk.webassembly.pack/9.0.2",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -1759,7 +1759,7 @@
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets",
         "build/Wasm.web.config",
         "build/browser.runtimeconfig.template.json",
-        "microsoft.net.sdk.webassembly.pack.9.0.4.nupkg.sha512",
+        "microsoft.net.sdk.webassembly.pack.9.0.2.nupkg.sha512",
         "microsoft.net.sdk.webassembly.pack.nuspec",
         "tools/net472/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
         "tools/net472/Microsoft.NET.WebAssembly.Webcil.dll",
@@ -1778,24 +1778,24 @@
       "LibraryApp.Shared >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 9.0.2",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 9.0.2",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.4",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.4"
+      "Microsoft.NET.ILLink.Tasks >= 9.0.2",
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ricsi\\.nuget\\packages\\": {}
+    "C:\\Users\\mamut\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
       "projectName": "LibraryWebApp",
-      "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
-      "packagesPath": "C:\\Users\\ricsi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\",
+      "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
+      "packagesPath": "C:\\Users\\mamut\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ricsi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\mamut\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -1807,8 +1807,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
-              "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj"
+            "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
+              "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj"
             }
           }
         }
@@ -1841,13 +1841,13 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.4, )",
+            "version": "[9.0.2, )",
             "autoReferenced": true
           },
           "Microsoft.NET.Sdk.WebAssembly.Pack": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.4, )",
+            "version": "[9.0.2, )",
             "autoReferenced": true
           }
         },
@@ -1865,7 +1865,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[9.0.4, 9.0.4]"
+            "version": "[9.0.2, 9.0.2]"
           }
         ],
         "frameworkReferences": {
@@ -1873,7 +1873,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\mamut\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

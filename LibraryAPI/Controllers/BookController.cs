@@ -1,4 +1,5 @@
 ﻿using LibraryAPI.Data;
+using LibraryAPI.Interfaces;
 using LibraryAPI.Services;
 using LibraryApp.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,60 +8,45 @@ using Microsoft.EntityFrameworkCore;
 namespace LibraryAPI.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("Books")]
 public class BookController : ControllerBase
 {
-    private readonly BookService _service;
+    private readonly ILogger<IBookService> _logger;
+    private readonly LibraryDB _context;
 
-    public BookController(BookService service)
+    public BookController(ILogger<IBookService> logger, LibraryDB context)
     {
-        _service = service;
+        _logger = logger;
+        _context = context;
     }
     
-    //HTTP GET
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
+    public async Task<List<Book?>> GetAllBooksAsync()
     {
-        return await _service.GetAllBooksAsync();
+        return await _context.Books.ToListAsync();
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Book>> GetBook(int id)
+    public async Task<Book?> GetBookById(int id)
     {
-        var book = await _service.GetBookByIdAsync(id);
+        return await _context.Books.FirstOrDefaultAsync(x => x.Id == id);
+    }
+
+    public async Task<ActionResult<Book?>> AddBookAsync(Book? book)
+    {
         if (book == null)
-        {
-            return NotFound();
-        }
-        return book;
+            return new BadRequestResult();
+    
+        _context.Books.Add(book);
+        await _context.SaveChangesAsync();
+        return new ActionResult<Book?>(book);
     }
 
-    [HttpPost]
-    public async Task<ActionResult<Book>> PostBook(Book book)
+    public Task UpdateBooksAsync(int id, Book book)
     {
-        await _service.CreateBookAsync(book);
-        return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
+        throw new NotImplementedException();
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutBook(int id, Book book)
+    public Task<ActionResult<Book>> DeleteBookAsync(int id)
     {
-        var update = await _service.UpdateAsync(id, book);
-        if (!update)
-        {
-            return NotFound();
-        }
-        return NoContent();
-    }
-
-    [HttpDelete("{id}")]
-    public async Task<ActionResult<Book>> DeleteBook(int id)
-    {
-        var succes = await _service.DeleteAsync(id);
-        if (!succes)
-        {
-            return NotFound();
-        }
-        return NoContent();
+        throw new NotImplementedException();
     }
 }

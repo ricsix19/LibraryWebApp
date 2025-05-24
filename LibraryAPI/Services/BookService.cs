@@ -1,60 +1,61 @@
 ﻿using LibraryAPI.Data;
+using LibraryAPI.Interfaces;
 using LibraryApp.Shared.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryAPI.Services;
 
-public class BookService
+public class BookService : IBookService
 {
+    private readonly ILogger<Book> _logger;
     private readonly LibraryDB _context;
 
-    public BookService(LibraryDB context)
+    public BookService(ILogger<Book> logger, LibraryDB context)
     {
         _context = context;
+        _logger = logger;
     }
 
-    public async Task<List<Book>> GetAllBooksAsync()
+    public async Task<List<Book?>> GetAllBooksAsync()
     {
         return await _context.Books.ToListAsync();
     }
 
-    public async Task<Book> GetBookByIdAsync(int id)
+    public async Task<Book?> GetBookById(int id)
     {
-        return await _context.Books.FindAsync(id);
+        return await _context.Books.FirstOrDefaultAsync(x => x.Id == id);
     }
 
-    public async Task<Book> CreateBookAsync(Book book)
+    public async Task<ActionResult<Book?>> AddBookAsync(Book? book)
     {
-        _context.Books.Add(book);
-        await _context.SaveChangesAsync();
-        return book;
-    }
-
-    public async Task<bool> DeleteAsync(int id)
-    {
-        var book = await _context.Books.FindAsync(id);
         if (book == null)
         {
-            return false;
+            return new BadRequestResult();
         }
-        
-        _context.Books.Remove(book);
+        _context.Books.Add(book);
         await _context.SaveChangesAsync();
-        return true;
+        
+        return new ActionResult<Book?>(book);
     }
-    
-    public async Task<bool> UpdateAsync(int id, Book book)
+
+    public async Task UpdateBooksAsync(int id, Book book)
     {
-        if (id != book.Id)
-            return false;
-
-        var exists = await _context.Books.AnyAsync(b => b.Id == id);
-        if (!exists)
-            return false;
-
         _context.Entry(book).State = EntityState.Modified;
         await _context.SaveChangesAsync();
-        return true;
     }
 
+    public async Task<ActionResult<Book>> DeleteBookAsync(int id)
+    {
+        var entity = await _context.Books.FindAsync(id);
+        if (entity == null)
+        {
+            return new NotFoundResult();
+        }
+        _context.Books.Remove(entity);
+        await _context.SaveChangesAsync();
+
+        return new ActionResult<Book>(entity);
+    }
 }
