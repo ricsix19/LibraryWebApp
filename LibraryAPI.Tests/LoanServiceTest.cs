@@ -26,6 +26,8 @@ public class LoanServiceTest
 
         Assert.Single(loans);
         Assert.Equal(1, loans[0].BookId);
+        Assert.Equal(1, loans[0].UserId);
+        Assert.Equal(DateTime.Now, loans[0].LoanDate);
     }
 
     [Fact]

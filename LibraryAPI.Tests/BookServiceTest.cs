@@ -28,6 +28,9 @@ public class BookServiceTest
 
         Assert.Single(books);
         Assert.Equal("Test", books[0].Title);
+        Assert.Equal("Test Author", books[0].Author);
+        Assert.Equal("Test Publisher", books[0].Publisher);
+        Assert.Equal(2025, books[0].ReleaseYear);
     }
     [Fact]
     public async Task DeleteAsync_ShouldRemoveBook()
