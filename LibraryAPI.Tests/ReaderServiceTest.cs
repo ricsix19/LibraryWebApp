@@ -31,4 +31,18 @@ public class ReaderServiceTest
         Assert.Equal("Somewhere", readers[0].Location);
         Assert.Equal(1990, readers[0].DateOfBirth);
     }
+    
+    [Fact]
+    public async Task DeleteReaderAsync_ShouldRemoveReader()
+    {
+        var context = GetInMemoryDbContext();
+        var service = new ReaderService(logger: null, context);
+        var reader = new Reader { Name = "Test", Location = "Nowhere" };
+        await service.AddReaderAsync(reader);
+
+        var result = await service.DeleteReaderAsync(reader.Id);
+        var readers = await service.GetAllReadersAsync();
+
+        Assert.Empty(readers);
+    }
 }
