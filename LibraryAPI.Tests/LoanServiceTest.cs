@@ -19,7 +19,7 @@ public class LoanServiceTest
     {
         var context = GetInMemoryDbContext();
         var service = new LoanService(logger: null, context);
-        var loan = new Loan { BookId = 1, UserId = 1, LoanDate = DateTime.Now };
+        var loan = new Loan { BookId = 1, UserId = 1, LoanDate = DateTime.Now.Date };
         
         var result = await service.AddLoanAsync(loan);
         var loans = await service.GetAllLoansAsync();
@@ -27,7 +27,7 @@ public class LoanServiceTest
         Assert.Single(loans);
         Assert.Equal(1, loans[0].BookId);
         Assert.Equal(1, loans[0].UserId);
-        Assert.Equal(DateTime.Now, loans[0].LoanDate);
+        Assert.Equal(DateTime.Now.Date, loans[0].LoanDate.Date);
     }
 
     [Fact]
