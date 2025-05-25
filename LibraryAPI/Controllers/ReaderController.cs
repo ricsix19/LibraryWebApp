@@ -54,7 +54,8 @@ public class ReaderController : ControllerBase
             {
                 return BadRequest();
             }
-            return CreatedAtAction(nameof(GetReaderByIdAsync), new { id = reader.Id }, reader);
+            return Created($"api/Reader/{reader.Id}", reader);
+            // return CreatedAtAction(nameof(GetReaderByIdAsync), "Reader",new { id = reader.Id }, reader);
         }
         catch (Exception ex)
         {
