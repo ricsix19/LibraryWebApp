@@ -51,20 +51,19 @@ public class BookController : ControllerBase
 
         try
         {
-
+            var result = await _bookService.AddBookAsync(book);
+            if (result.Result is BadRequestResult)
+            {
+                return BadRequest();
+            }
+            return CreatedAtAction(nameof(GetBookByIdAsync), new { id = book.Id }, book);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Valami hiba történt");
             return StatusCode(500, "belső szerverhiba");
         }
-        var result = await _bookService.AddBookAsync(book);
-        if (result.Result is BadRequestResult)
-        {
-            return BadRequest();
-        }
         
-        return CreatedAtAction(nameof(GetBookByIdAsync), new { id = book.Id }, book);
         // return CreatedAtRoute("GetBookById", new { id = result.Result }, result);
     }
 

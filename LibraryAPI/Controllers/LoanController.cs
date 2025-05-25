@@ -70,7 +70,7 @@ public class LoanController: ControllerBase
             return BadRequest();
         }
         
-        return CreatedAtAction(nameof(GetLoanByReaderIdAsync), new { loanId = loan.Id }, loan);
+        return CreatedAtAction(nameof(GetLoanById), new { id = loan.Id }, loan);
     }
     
     [HttpPut("{id:int}")]

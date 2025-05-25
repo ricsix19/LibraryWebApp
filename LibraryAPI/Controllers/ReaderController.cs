@@ -43,16 +43,24 @@ public class ReaderController : ControllerBase
     {
         if (reader == null)
         {
+            _logger.LogWarning("Reader is null");
             return BadRequest();
         }
-        
-        var result = await _readerService.AddReaderAsync(reader);
-        if (result.Result is BadRequestResult)
+
+        try
         {
-            return BadRequest();
+            var result = await _readerService.AddReaderAsync(reader);
+            if (result.Result is BadRequestResult)
+            {
+                return BadRequest();
+            }
+            return CreatedAtAction(nameof(GetReaderByIdAsync), new { id = reader.Id }, reader);
         }
-        
-        return CreatedAtAction(nameof(GetReaderByIdAsync), new { id = reader.Id }, reader);
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Valami hiba keletkezett.");
+            return StatusCode(500, "Belső szerverhiba történt.");
+        }
     }
 
     [HttpPut("{id:int}")]
