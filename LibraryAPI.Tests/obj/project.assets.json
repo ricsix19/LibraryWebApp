@@ -2999,19 +2999,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ricsi\\.nuget\\packages\\": {}
+    "C:\\Users\\mamut\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryAPI.Tests\\LibraryAPI.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryAPI.Tests\\LibraryAPI.Tests.csproj",
       "projectName": "LibraryAPI.Tests",
-      "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryAPI.Tests\\LibraryAPI.Tests.csproj",
-      "packagesPath": "C:\\Users\\ricsi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryAPI.Tests\\obj\\",
+      "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryAPI.Tests\\LibraryAPI.Tests.csproj",
+      "packagesPath": "C:\\Users\\mamut\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryAPI.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ricsi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\mamut\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -3023,8 +3023,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryAPI\\LibraryAPI.csproj": {
-              "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryAPI\\LibraryAPI.csproj"
+            "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryAPI\\LibraryAPI.csproj": {
+              "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryAPI\\LibraryAPI.csproj"
             }
           }
         }
@@ -3082,7 +3082,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\mamut\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
