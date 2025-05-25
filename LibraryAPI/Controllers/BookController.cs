@@ -1,4 +1,5 @@
 ﻿using LibraryAPI.Data;
+using LibraryAPI.Interfaces;
 using LibraryAPI.Services;
 using LibraryApp.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -10,57 +11,90 @@ namespace LibraryAPI.Controllers;
 [Route("api/[controller]")]
 public class BookController : ControllerBase
 {
-    private readonly BookService _service;
+    private readonly ILogger<IBookService> _logger;
+    private readonly IBookService _bookService;
 
-    public BookController(BookService service)
+    public BookController(ILogger<IBookService> logger, IBookService bookService)
     {
-        _service = service;
+        _logger = logger;
+        _bookService = bookService;
     }
-    
-    //HTTP GET
+
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
+    public async Task<ActionResult<IEnumerable<Book>>> GetAllBooksAsync()
     {
-        return await _service.GetAllBooksAsync();
+        var books = await _bookService.GetAllBooksAsync();
+        return Ok(books); //200-as http informaci kod generalas hogy sikeresen lekertuk az osszes konyvet
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Book>> GetBook(int id)
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Book?>> GetBookByIdAsync(int id)
     {
-        var book = await _service.GetBookByIdAsync(id);
+        var book = await _bookService.GetBookById(id);
         if (book == null)
         {
+            _logger.LogWarning($"Book with id {id} not found");
             return NotFound();
         }
-        return book;
+        return Ok(book);
     }
 
     [HttpPost]
-    public async Task<ActionResult<Book>> PostBook(Book book)
+    public async Task<ActionResult<Book>> CreateBookAsync(Book book)
     {
-        await _service.CreateBookAsync(book);
-        return CreatedAtAction(nameof(GetBook), new { id = book.Id }, book);
+        _logger.LogInformation("Creating book: {0}", book?.Title);
+        if (book == null)
+        {
+            _logger.LogWarning("Book is null");
+            return BadRequest();
+        }
+
+        try
+        {
+            var result = await _bookService.AddBookAsync(book);
+            if (result.Result is BadRequestResult)
+            {
+                return BadRequest();
+            }
+            return Created($"/api/books/{book.Id}", book);
+            // return CreatedAtAction(nameof(GetBookByIdAsync), new { id = book.Id }, book);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Valami hiba történt");
+            return StatusCode(500, "belső szerverhiba");
+        }
+        
+        // return CreatedAtRoute("GetBookById", new { id = result.Result }, result);
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutBook(int id, Book book)
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateBookAsync(int id, Book book)
     {
-        var update = await _service.UpdateAsync(id, book);
-        if (!update)
+        if (book == null || id != book.Id)
+        {
+            return BadRequest();
+        }
+        var existing = await _bookService.GetBookById(id);
+        if (existing == null)
         {
             return NotFound();
         }
+
+        await _bookService.UpdateBooksAsync(id, book);
         return NoContent();
     }
 
-    [HttpDelete("{id}")]
-    public async Task<ActionResult<Book>> DeleteBook(int id)
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteBookAsync(int id)
     {
-        var succes = await _service.DeleteAsync(id);
-        if (!succes)
+        var existing = await _bookService.GetBookById(id);
+        if (existing == null)
         {
             return NotFound();
         }
+        
+        await _bookService.DeleteBookAsync(id);
         return NoContent();
     }
 }
