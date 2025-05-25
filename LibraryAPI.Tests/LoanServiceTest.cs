@@ -14,4 +14,17 @@ public class LoanServiceTest
             .Options;
         return new LibraryDB(options);
     }
+    [Fact]
+    public async Task AddLoanAsync_ShouldAddLoan()
+    {
+        var context = GetInMemoryDbContext();
+        var service = new LoanService(logger: null, context);
+        var loan = new Loan { BookId = 1, UserId = 1, LoanDate = DateTime.Now };
+        
+        var result = await service.AddLoanAsync(loan);
+        var loans = await service.GetAllLoansAsync();
+
+        Assert.Single(loans);
+        Assert.Equal(1, loans[0].BookId);
+    }
 }
