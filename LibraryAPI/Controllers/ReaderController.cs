@@ -27,7 +27,7 @@ public class ReaderController : ControllerBase
     }
 
     [HttpGet("{id:int}")]
-    public async Task<ActionResult<Reader?>> GetReaderByIdAsync(int id)
+    public async Task<ActionResult<Reader>> GetReaderByIdAsync(int id)
     {
         var reader = await _readerService.GetReaderAsync(id);
         if (reader == null)
@@ -55,7 +55,7 @@ public class ReaderController : ControllerBase
                 return BadRequest();
             }
             return Created($"api/Reader/{reader.Id}", reader);
-            // return CreatedAtAction(nameof(GetReaderByIdAsync), "Reader",new { id = reader.Id }, reader);
+            // return CreatedAtAction(nameof(GetReaderByIdAsync),new { id = reader.Id }, reader);
         }
         catch (Exception ex)
         {

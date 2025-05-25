@@ -56,7 +56,8 @@ public class BookController : ControllerBase
             {
                 return BadRequest();
             }
-            return CreatedAtAction(nameof(GetBookByIdAsync), new { id = book.Id }, book);
+            return Created($"/api/books/{book.Id}", book);
+            // return CreatedAtAction(nameof(GetBookByIdAsync), new { id = book.Id }, book);
         }
         catch (Exception ex)
         {
