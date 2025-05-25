@@ -1102,10 +1102,6 @@ C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroo
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\dotnet.native.8bti36lthm.js
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\dotnet.native.tr0cyonrwt.wasm
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtime.tsg4gsv2hg.js
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryApp.Shared.rc5v2kga4o.pdb
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryApp.Shared.el2p1qagpv.wasm
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryWebApp.75xtgfc3vm.pdb
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryWebApp.00cvahgwae.wasm
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.esv38zo127.wasm
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.aq1ir8e8pl.wasm
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Components.cwj0bpb71v.wasm
@@ -1376,7 +1372,6 @@ C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroo
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.ComponentModel.EventBasedAsync.thm3r1qmen.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Configuration.27zm9566sv.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Runtime.Handles.mhaxazpdw0.wasm.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryApp.Shared.rc5v2kga4o.pdb.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Net.WebSockets.Client.hv182fev7c.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Buffers.gb72qmeqj8.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Extensions.DependencyInjection.w6rb25gv28.wasm.gz
@@ -1396,7 +1391,6 @@ C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroo
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Drawing.zptejx9h1x.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Net.Requests.4hk8tos0gu.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\dotnet.js.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryWebApp.00cvahgwae.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Threading.Thread.8svcmv6b7k.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Net.WebHeaderCollection.r0r1vmnjer.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Xml.Linq.klzmsxmq67.wasm.gz
@@ -1417,7 +1411,6 @@ C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroo
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.ComponentModel.Annotations.ckge75x1cm.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Runtime.rpnxqnm5kp.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Win32.Primitives.weh8h3644m.wasm.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryApp.Shared.el2p1qagpv.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Runtime.Intrinsics.jpq5ew51k4.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.IO.FileSystem.zovl0unrgn.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Net.Http.Json.l3uod96fpn.wasm.gz
@@ -1425,7 +1418,6 @@ C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroo
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.IO.FileSystem.DriveInfo.uhxsnjyfd0.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.IO.FileSystem.Watcher.gwei2b41uj.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.ComponentModel.Primitives.k9taspcy5h.wasm.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryWebApp.75xtgfc3vm.pdb.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Security.Cryptography.Cng.324weailu2.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Security.AccessControl.uiaucge1bp.wasm.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\System.Runtime.InteropServices.q39lm5lg7m.wasm.gz
@@ -2165,11 +2157,6 @@ C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compre
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\2vpjdqhh84-tjcz0u77k5.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\xodjkri6j3-tptq2av103.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\3i6ty1hv0a-lfu7j35m59.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\kespx21kwd-el2p1qagpv.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\dcmm33izyw-rc5v2kga4o.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\hejplwdlvk-00cvahgwae.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\maatx6vnr2-75xtgfc3vm.gz
-C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\e5qdhvujhs-wl04s1ptg9.gz
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -2184,3 +2171,16 @@ C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\Librar
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\refint\LibraryWebApp.dll
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\LibraryWebApp.pdb
 C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\ref\LibraryWebApp.dll
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryApp.Shared.3skkc043dc.pdb
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryApp.Shared.zppmfghuwg.wasm
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryApp.Shared.3skkc043dc.pdb.gz
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryApp.Shared.zppmfghuwg.wasm.gz
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\kespx21kwd-zppmfghuwg.gz
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\dcmm33izyw-3skkc043dc.gz
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryWebApp.6dvntx66ly.pdb
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryWebApp.iinjcim4bk.wasm
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryWebApp.iinjcim4bk.wasm.gz
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\bin\Debug\net9.0\wwwroot\_framework\LibraryWebApp.6dvntx66ly.pdb.gz
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\hejplwdlvk-iinjcim4bk.gz
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\maatx6vnr2-6dvntx66ly.gz
+C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\obj\Debug\net9.0\compressed\e5qdhvujhs-5lu77r442s.gz

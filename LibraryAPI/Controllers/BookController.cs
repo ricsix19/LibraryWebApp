@@ -42,9 +42,21 @@ public class BookController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Book>> CreateBookAsync(Book book)
     {
+        _logger.LogInformation("Creating book: {0}", book?.Title);
         if (book == null)
         {
+            _logger.LogWarning("Book is null");
             return BadRequest();
+        }
+
+        try
+        {
+
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Valami hiba történt");
+            return StatusCode(500, "belső szerverhiba");
         }
         var result = await _bookService.AddBookAsync(book);
         if (result.Result is BadRequestResult)

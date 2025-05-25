@@ -1,4 +1,5 @@
 ﻿using LibraryAPI.Data;
+using LibraryAPI.Interfaces;
 using LibraryApp.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,78 +10,79 @@ namespace LibraryAPI.Controllers;
 [Route("api/[controller]")]
 public class ReaderController : ControllerBase
 {
-    private readonly LibraryDB _context;
+     private readonly ILogger<IReaderService> _logger;
+    private readonly IReaderService _readerService;
 
-    public ReaderController(LibraryDB context)
+    public ReaderController(ILogger<IReaderService> logger, IReaderService readerService)
     {
-        _context = context;
+        _logger = logger;
+        _readerService = readerService;
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Reader>>> GetReaders()
+    public async Task<ActionResult<IEnumerable<Reader>>> GetReadersAsync()
     {
-        return await _context.Readers.ToListAsync();
+        var readers = await _readerService.GetAllReadersAsync();
+        return Ok(readers);
     }
 
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Reader>> GetReader(int id)
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Reader?>> GetReaderByIdAsync(int id)
     {
-        var reader = await _context.Readers.FindAsync(id);
+        var reader = await _readerService.GetReaderAsync(id);
         if (reader == null)
         {
+            _logger.LogWarning($"Reader with id {id} not found");
             return NotFound();
         }
-        
-        return reader;
+        return Ok(reader);
     }
 
     [HttpPost]
-    public async Task<ActionResult<Reader>> PostReader(Reader reader)
+    public async Task<ActionResult<Reader>> CreateReaderAsync(Reader reader)
     {
-        _context.Readers.Add(reader);
-        await _context.SaveChangesAsync();
-        
-        return CreatedAtAction(nameof(GetReader), new { id = reader.Id }, reader);
-    }
-
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutReader(int id, Reader reader)
-    {
-        if (id != reader.Id)
+        if (reader == null)
         {
             return BadRequest();
         }
         
-        _context.Entry(reader).State = EntityState.Modified;
-
-        try
+        var result = await _readerService.AddReaderAsync(reader);
+        if (result.Result is BadRequestResult)
         {
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!_context.Readers.Any(r => r.Id == id))
-            {
-                return NotFound();
-            }
-            throw;
+            return BadRequest();
         }
         
+        return CreatedAtAction(nameof(GetReaderByIdAsync), new { id = reader.Id }, reader);
+    }
+
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateReaderAsync(int id, Reader reader)
+    {
+        if (reader == null || id != reader.Id)
+        {
+            return BadRequest();
+        }
+        
+        var existing = await _readerService.GetReaderAsync(id);
+        if (existing == null)
+        {
+            return NotFound();
+        }
+
+        await _readerService.UpdateReaderAsync(id, reader);
         return NoContent();
     }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteReader(int id)
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteReaderAsync(int id)
     {
-        var reader = await _context.Readers.FindAsync(id);
-        if (reader == null)
+        var existing = await _readerService.GetReaderAsync(id);
+        if (existing == null)
         {
             return NotFound();
         }
         
-        _context.Readers.Remove(reader);
-        await _context.SaveChangesAsync();
-        
+        await _readerService.DeleteReaderAsync(id);
         return NoContent();
     }
 }

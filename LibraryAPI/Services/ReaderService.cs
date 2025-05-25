@@ -17,7 +17,7 @@ public class ReaderService : IReaderService
         _context = context;
     }
 
-    public async Task<List<Reader>> GetReadersAsync()
+    public async Task<List<Reader>> GetAllReadersAsync()
     {
         return await _context.Readers.ToListAsync();
     }

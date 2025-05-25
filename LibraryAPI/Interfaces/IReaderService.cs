@@ -5,7 +5,7 @@ namespace LibraryAPI.Interfaces;
 
 public interface IReaderService
 {
-    Task<List<Reader>> GetReadersAsync();
+    Task<List<Reader>> GetAllReadersAsync();
     
     Task<Reader?> GetReaderAsync(int id);
     
