@@ -24,6 +24,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<ILoanService, LoanService>();
+builder.Services.AddScoped<IReaderService, ReaderService>();
 
 var app = builder.Build();
 
@@ -39,7 +40,7 @@ app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 app.UseAuthorization();
 app.MapControllers();
 
-builder.Services.AddScoped<BookService>();
+//builder.Services.AddScoped<BookService>();
 
 app.Run();
 

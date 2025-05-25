@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace LibraryAPI.Controllers;
 
 [ApiController]
-[Route("Books")]
+[Route("api/[controller]")]
 public class BookController : ControllerBase
 {
     private readonly ILogger<IBookService> _logger;
@@ -27,7 +27,7 @@ public class BookController : ControllerBase
         return Ok(books); //200-as http informaci kod generalas hogy sikeresen lekertuk az osszes konyvet
     }
 
-    [HttpGet("{id:int}", Name = "GetBookById")]
+    [HttpGet("{id:int}")]
     public async Task<ActionResult<Book?>> GetBookByIdAsync(int id)
     {
         var book = await _bookService.GetBookById(id);
@@ -52,7 +52,8 @@ public class BookController : ControllerBase
             return BadRequest();
         }
         
-        return CreatedAtRoute("GetBookById", new { id = result.Result }, result);
+        return CreatedAtAction(nameof(GetBookByIdAsync), new { id = book.Id }, book);
+        // return CreatedAtRoute("GetBookById", new { id = result.Result }, result);
     }
 
     [HttpPut("{id:int}")]

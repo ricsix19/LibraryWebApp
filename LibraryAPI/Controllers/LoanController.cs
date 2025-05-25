@@ -1,4 +1,5 @@
 ﻿using LibraryAPI.Data;
+using LibraryAPI.Interfaces;
 using LibraryApp.Shared.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,28 +10,49 @@ namespace LibraryAPI.Controllers;
 [Route("api/[controller]")]
 public class LoanController: ControllerBase
 {
-    private readonly LibraryDB _context;
+    private readonly ILogger<ILoanService> _logger;
+    private readonly ILoanService _loanService;
 
-    public LoanController(LibraryDB context)
+    public LoanController(ILogger<ILoanService> logger, ILoanService loanservice)
     {
-        _context = context;
+        _loanService = loanservice;
+        _logger = logger;
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Loan>>> GetLoan()
     {
-        return await _context.Loans.ToListAsync();
+        var loans = await _loanService.GetAllLoansAsync();
+        return Ok(loans);
     }
 
-    [HttpGet("reader/{readerId}")]
-    public async Task<ActionResult<IEnumerable<Loan>>> GetLoanByReaderId(int readerId)
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<IEnumerable<Loan?>>> GetLoanById(int id)
     {
-        return await _context.Loans.Where(l => l.UserId == readerId).ToListAsync();
+        var loan = await _loanService.GetLoanAsync(id);
+        if (loan == null)
+        {
+            _logger.LogWarning($"Loan with id {id} not found");
+            return NotFound();
+        }
+        return Ok(loan);
     }
-
+    
+    [HttpGet("reader/{readerId:int}")]
+    public async Task<ActionResult<IEnumerable<Loan>>> GetLoanByReaderIdAsync(int readerId)
+    {
+        var loans = await _loanService.GetAllLoansAsync();
+        var filteredLoans = loans.Where(l => l.UserId == readerId).ToList();
+        return Ok(filteredLoans);
+    }
+    
     [HttpPost]
     public async Task<ActionResult<Loan>> PostLoan(Loan loan)
     {
+        if (loan == null)
+        {
+            return BadRequest();
+        }
         if (loan.LoanDate.Date < DateTime.Now.Date)
         {
             return BadRequest("Loan out date cannot be earlier than today");
@@ -41,32 +63,44 @@ public class LoanController: ControllerBase
             return BadRequest("Loan return date cannot be earlier than Loan out date");
         }
 
-        var ReaderExist = await _context.Readers.AnyAsync(r => r.Id == loan.UserId);
-        var BookExist = await _context.Books.AnyAsync(b => b.Id == loan.BookId);
+        var result = await _loanService.AddLoanAsync(loan);
 
-        if (!ReaderExist || !BookExist)
+        if (result.Result is BadRequestResult)
         {
-            return BadRequest("Reader or Book does not exist in the database!");
+            return BadRequest();
         }
         
-        _context.Loans.Add(loan);
-        await _context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetLoanByReaderIdAsync), new { loanId = loan.Id }, loan);
+    }
+    
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateLoanAsync(int id, Loan loan)
+    {
+        if (loan == null || id != loan.Id)
+        {
+            return BadRequest();
+        }
         
-        return CreatedAtAction(nameof(GetLoan), new { loanId = loan.Id }, loan);
+        var existing = await _loanService.GetLoanAsync(id);
+        if (existing == null)
+        {
+            return NotFound();
+        }
+
+        await _loanService.UpdateLoanAsync(id, loan);
+        return NoContent();
     }
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteLoan(int id)
     {
-        var loan = await _context.Loans.FindAsync(id);
-        if (loan == null)
+        var existing = await _loanService.GetLoanAsync(id);
+        if (existing == null)
         {
             return NotFound();
         }
         
-        _context.Loans.Remove(loan);
-        await _context.SaveChangesAsync();
-        
+        await _loanService.DeleteLoanAsync(id);
         return NoContent();
     }
 }

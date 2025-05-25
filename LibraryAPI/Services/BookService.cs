@@ -25,7 +25,7 @@ public class BookService : IBookService
 
     public async Task<Book?> GetBookById(int id)
     {
-        return await _context.Books.FirstOrDefaultAsync(x => x.Id == id);
+        return await _context.Books.FindAsync(id);
     }
 
     public async Task<ActionResult<Book?>> AddBookAsync(Book? book)
