@@ -9,7 +9,7 @@ public interface ILoanService
     
     Task<Loan?> GetLoanAsync(int id);
     
-    Task<ActionResult<Reader?>> AddLoanAsync(Loan? loan);
+    Task<ActionResult<Loan?>> AddLoanAsync(Loan? loan);
     
     Task UpdateLoanAsync(int id, Loan? loan);
     
