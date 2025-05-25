@@ -27,4 +27,18 @@ public class LoanServiceTest
         Assert.Single(loans);
         Assert.Equal(1, loans[0].BookId);
     }
+
+    [Fact]
+    public async Task DeleteLoanAsync_ShouldRemoveLoan()
+    {
+        var context = GetInMemoryDbContext();
+        var service = new LoanService(logger: null, context);
+        var loan = new Loan { BookId = 1, UserId = 1, LoanDate = DateTime.Now };
+        await service.AddLoanAsync(loan);
+        
+        var result = await service.DeleteLoanAsync(loan.Id);
+        var loans = await service.GetAllLoansAsync();
+        
+        Assert.Empty(loans);
+    }
 }
