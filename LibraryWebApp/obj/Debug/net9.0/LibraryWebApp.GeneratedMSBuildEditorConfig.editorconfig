@@ -13,45 +13,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = LibraryWebApp
 build_property.RootNamespace = LibraryWebApp
-build_property.ProjectDir = C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp\
+build_property.ProjectDir = C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryWebApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mamut\RiderProjects\LibraryWebApp\LibraryWebApp
+build_property.MSBuildProjectDirectory = C:\Users\ricsi\RiderProjects\LibraryWebApp\LibraryWebApp
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/App.razor]
+[C:/Users/ricsi/RiderProjects/LibraryWebApp/LibraryWebApp/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Books.razor]
+[C:/Users/ricsi/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Books.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Home.razor]
+[C:/Users/ricsi/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Loan.razor]
+[C:/Users/ricsi/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Loan.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9hbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Readers.razor]
+[C:/Users/ricsi/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Readers.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVhZGVycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/_Imports.razor]
+[C:/Users/ricsi/RiderProjects/LibraryWebApp/LibraryWebApp/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Layout/MainLayout.razor]
+[C:/Users/ricsi/RiderProjects/LibraryWebApp/LibraryWebApp/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-21ltrw3gpj
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Layout/NavMenu.razor]
+[C:/Users/ricsi/RiderProjects/LibraryWebApp/LibraryWebApp/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ur1u8z068k
