@@ -13,26 +13,47 @@ else
     <table class="table">
         <thead>
         <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Publisher</th>
-            <th>Release Year</th>
-            <th>Delete</th>
+            <th>Cím</th>
+            <th>Szerző</th>
+            <th>Kiadó</th>
+            <th>Kiadás éve</th>
+            <th>Műveletek</th>    
         </tr>
         </thead>
         <tbody>
         @foreach (var book in books)
         {
             <tr>
-                <td>@book.Title</td>
-                <td>@book.Author</td>
-                <td>@book.Publisher</td>
-                <td>@book.ReleaseYear</td>
-                <td><button class="btn btn-danger btn-sm" @onclick="() => DeleteBook(book.Id)">🗑️</button></td>
+                @if (editBook != null && editBook.Id == book.Id)
+                {
+                    <td colspan="4">
+                        <EditForm Model="@editBook" OnValidSubmit="()=>UpdateBook(editBook.Id)">
+                            <DataAnnotationsValidator />
+                            <input class="form-control " @bind="editBook.Title" />
+                            <input class="form-control mt-1" @bind="editBook.Author" />
+                            <input class="form-control mt-1" @bind="editBook.Publisher" />
+                            <input class="form-control mt-1" type="number" @bind="editBook.ReleaseYear" />
+                            <button class="btn btn-sm btn-success mt-1" type="submit">Mentés</button>
+                            <button class="btn btn-sm btn-secondary mt-1 ms-1" type="button" @onclick="()=>editBook = null">Mégse</button>
+                        </EditForm>
+                    </td>
+                }
+                else
+                {
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.Publisher</td>
+                    <td>@book.ReleaseYear</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(book)">Szerkesztés</button>
+                        <button class="btn btn-danger btn-sm ms-1" @onclick="() => DeleteBook(book.Id)">🗑️</button>
+                    </td>
+                }
             </tr>
         }
         </tbody>
     </table>
+
 }
 
 <h4>Add a new book</h4>
@@ -59,18 +80,24 @@ else
 @code {
     private List<Book>? books;
     private Book newBook = new();
+    private Book? editBook;
 
     protected override async Task OnInitializedAsync()
     {
-        books = await Http.GetFromJsonAsync<List<Book>>("api/Book");
+        await LoadBooks();
     }
 
+    private async Task LoadBooks()
+    {
+        books = await Http.GetFromJsonAsync<List<Book>>("api/Book");
+    }
+    
     private async Task AddBook()
     {
         var response = await Http.PostAsJsonAsync("api/Book", newBook);
         if (response.IsSuccessStatusCode)
         {
-            books = await Http.GetFromJsonAsync<List<Book>>("api/Book");
+            await LoadBooks();
             newBook = new();
         }
     }
@@ -78,7 +105,28 @@ else
     private async Task DeleteBook(int id)
     {
         await Http.DeleteAsync($"api/Book/{id}");
-        books = await Http.GetFromJsonAsync<List<Book>>("api/Book");
+        await LoadBooks();
     }
 
+    private void StartEdit(Book book)
+    {
+        editBook = new()
+        {
+            Id = book.Id,
+            Title = book.Title,
+            Author = book.Author,
+            Publisher = book.Publisher,
+            ReleaseYear = book.ReleaseYear
+        };
+    }
+
+    private async Task UpdateBook(int id)
+    {
+        var response = await Http.PutAsJsonAsync($"api/Book/{id}", editBook);
+        if (response.IsSuccessStatusCode)
+        {
+            editBook = null;
+            await LoadBooks();
+        }
+    }
 }
