@@ -6,7 +6,7 @@
 
 @if (loans == null)
 {
-    <p>Betöltés...</p>
+    <p>Loading...</p>
 }
 else
 {
@@ -17,21 +17,41 @@ else
             <th>Book ID</th>
             <th>Loan out date</th>
             <th>Return date</th>
-            <th>Delete</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         @foreach (var loan in loans)
         {
             <tr>
-                <td>@loan.UserId</td>
-                <td>@loan.BookId</td>
-                <td>@loan.LoanDate.ToShortDateString()</td>
-                <td>@loan.LoanReturnDate.ToShortDateString()</td>
-                <td><button class="btn btn-danger btn-sm" @onclick="() => DeleteLoan(loan.Id)">🗑️</button></td>
+                @if (editLoan != null && editLoan.Id == loan.Id)
+                {
+                    <td colspan="4">
+                        <EditForm Model="@editLoan" OnValidSubmit="()=>UpdateLoan(editLoan.Id)">
+                            <DataAnnotationsValidator />
+                            <input class="form-control " @bind="editLoan.UserId" />
+                            <input class="form-control mt-1" @bind="editLoan.BookId" />
+                            <input class="form-control mt-1" @bind="editLoan.LoanDate" />
+                            <input class="form-control mt-1" @bind="editLoan.LoanReturnDate" />
+                            <button class="btn btn-sm btn-success mt-1" type="submit">Save</button>
+                            <button class="btn btn-sm btn-secondary mt-1 ms-1" type="button" @onclick="()=>editLoan = null">Cancel</button>
+                        </EditForm>
+                    </td>
+                }
+                else
+                {
+                    <td>@loan.UserId</td>
+                    <td>@loan.BookId</td>
+                    <td>@loan.LoanDate</td>
+                    <td>@loan.LoanReturnDate</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(loan)">Edit</button>
+                        <button class="btn btn-danger btn-sm ms-1" @onclick="() => DeleteLoan(loan.Id)">🗑️</button>
+                    </td>
+                }
             </tr>
         }
-        </tbody>
+    </tbody>
     </table>
 }
 
@@ -66,6 +86,8 @@ else
         LoanReturnDate = DateTime.Today.AddDays(7)
     };
 
+    private LibraryApp.Shared.Models.Loan editLoan = new();
+    
     protected override async Task OnInitializedAsync()
     {
         loans = await Http.GetFromJsonAsync<List<LibraryApp.Shared.Models.Loan>>("api/Loan");
@@ -80,7 +102,29 @@ else
             newLoan = new() { LoanDate = DateTime.Today, LoanReturnDate = DateTime.Today.AddDays(7) };
         }
     }
-
+    
+    private void StartEdit(LibraryApp.Shared.Models.Loan loan)
+    {
+        editLoan = new()
+        {
+            Id = loan.Id,
+            BookId = loan.BookId,
+            UserId = loan.UserId,
+            LoanDate = loan.LoanDate,
+            LoanReturnDate = loan.LoanReturnDate
+        };
+    }
+    
+    private async Task UpdateLoan(int id)
+    {
+        var response = await Http.PutAsJsonAsync($"api/Loan/{id}", editLoan);
+        if (response.IsSuccessStatusCode)
+        {
+            editLoan = null;
+            await OnInitializedAsync();
+        }
+    }
+    
     private async Task DeleteLoan(int id)
     {
         await Http.DeleteAsync($"api/Loan/{id}");

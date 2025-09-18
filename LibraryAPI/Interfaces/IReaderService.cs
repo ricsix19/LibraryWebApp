@@ -11,7 +11,7 @@ public interface IReaderService
     
     Task<ActionResult<Reader?>> AddReaderAsync(Reader? reader);
     
-    Task UpdateReaderAsync(int id, Reader? reader);
+    Task UpdateReaderAsync(int id, Reader reader);
     
     Task<ActionResult<Reader?>> DeleteReaderAsync(int id);
 }

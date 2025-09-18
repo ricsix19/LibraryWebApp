@@ -11,21 +11,40 @@ else
 {
     <table class="table">
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Date of Birth</th>
-                <th>Delete</th>
-            </tr>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
-        @foreach (var r in readers)
+        @foreach (var reader in readers)
         {
             <tr>
-                <td>@r.Name</td>
-                <td>@r.Location</td>
-                <td>@r.DateOfBirth</td>
-                <td><button class="btn btn-danger btn-sm" @onclick="() => DeleteReader(r.Id)">🗑️</button></td>
+                @if (editReader != null && editReader.Id == reader.Id)
+                {
+                    <td colspan="3">
+                        <EditForm Model="@editReader" OnValidSubmit="()=>UpdateReader(editReader.Id)">
+                            <DataAnnotationsValidator />
+                            <input class="form-control " @bind="editReader.Name" />
+                            <input class="form-control mt-1" @bind="editReader.Location" />
+                            <input class="form-control mt-1" type="number" @bind="editReader.DateOfBirth" />
+                            <button class="btn btn-sm btn-success mt-1" type="submit">Save</button>
+                            <button class="btn btn-sm btn-secondary mt-1 ms-1" type="button" @onclick="()=>editReader = null">Cancel</button>
+                        </EditForm>
+                    </td>
+                }
+                else
+                {
+                    <td>@reader.Name</td>
+                    <td>@reader.Location</td>
+                    <td>@reader.DateOfBirth</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(reader)">Edit</button>
+                        <button class="btn btn-danger btn-sm" @onclick="() => DeleteReader(reader.Id)">🗑️</button>
+                    </td>
+                }
             </tr>
         }
         </tbody>
@@ -50,9 +69,11 @@ else
     <button class="btn btn-primary" type="submit">Add</button>
 </EditForm>
 
-@code {
+@code 
+{
     private List<Reader>? readers;
     private Reader newReader = new();
+    private Reader? editReader = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -69,6 +90,27 @@ else
         }
     }
 
+    private void StartEdit(Reader reader)
+    {
+        editReader = new()
+        {
+            Id = reader.Id,
+            DateOfBirth = reader.DateOfBirth,
+            Location = reader.Location,
+            Name = reader.Name
+        };
+    }
+    
+    private async Task UpdateReader(int id)
+    {
+        var response = await Http.PutAsJsonAsync($"api/Reader/{id}", editReader);
+        if (response.IsSuccessStatusCode)
+        {
+            editReader = null;
+            await OnInitializedAsync();
+        }
+    }
+    
     private async Task DeleteReader(int id)
     {
         await Http.DeleteAsync($"api/Reader/{id}");

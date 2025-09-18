@@ -41,11 +41,19 @@ public class LoanService : ILoanService
 
     public async Task UpdateLoanAsync(int id, Loan? loan)
     {
-        if (loan != null)
+        var entity = await _context.Loans.FindAsync(id);
+        if (entity == null)
         {
-            _context.Entry(loan).State = EntityState.Modified;
-            await _context.SaveChangesAsync();   
+            throw new Exception("The loan that you are trying to update does not exist");
         }
+        
+        entity.Id = loan.Id;
+        entity.UserId = loan.UserId;
+        entity.BookId = loan.BookId;
+        entity.LoanDate = loan.LoanDate;
+        entity.LoanReturnDate = loan.LoanReturnDate;
+        
+        await _context.SaveChangesAsync();
     }
 
     public async Task<ActionResult<Loan?>> DeleteLoanAsync(int id)

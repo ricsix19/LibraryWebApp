@@ -41,11 +41,18 @@ public class ReaderService : IReaderService
 
     public async Task UpdateReaderAsync(int id, Reader? reader)
     {
-        if (reader != null)
+        var entity = await _context.Readers.FindAsync(id);
+        if (entity == null)
         {
-            _context.Entry(reader).State = EntityState.Modified;
-            await _context.SaveChangesAsync();   
+            throw new Exception("The reader that you are trying to update does not exist");
         }
+
+        entity.Id = reader.Id;
+        entity.DateOfBirth = reader.DateOfBirth;
+        entity.Location = reader.Location;
+        entity.Name = reader.Name;
+        
+        await _context.SaveChangesAsync();
     }
 
     public async Task<ActionResult<Reader?>> DeleteReaderAsync(int id)
