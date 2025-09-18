@@ -42,7 +42,18 @@ public class BookService : IBookService
 
     public async Task UpdateBooksAsync(int id, Book book)
     {
-        _context.Entry(book).State = EntityState.Modified;
+        var entity = await _context.Books.FindAsync(id);
+
+        if (entity == null)
+        {
+            throw new Exception("The book that you are trying to update does not exist");
+        }
+        
+        entity.Title = book.Title;
+        entity.Author = book.Author;
+        entity.Publisher = book.Publisher;
+        entity.ReleaseYear = book.ReleaseYear;
+        
         await _context.SaveChangesAsync();
     }
 

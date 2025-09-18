@@ -68,7 +68,7 @@ public class BookController : ControllerBase
         // return CreatedAtRoute("GetBookById", new { id = result.Result }, result);
     }
 
-    [HttpPut("{id:int}")]
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateBookAsync(int id, Book book)
     {
         if (book == null || id != book.Id)
