@@ -3,39 +3,88 @@
 @inject HttpClient Http
 @inject NavigationManager Nav
 
-<h3>Login</h3>
+<h3>Authentication</h3>
 
-<EditForm Model="@model" OnValidSubmit="DoLogin">
-    <DataAnnotationsValidator />
-    <input class="form-control mb-2" @bind="model.Email" placeholder="Email" />
-    <input class="form-control mb-2" type="password" @bind="model.Password" placeholder="Password" />
-    <button class="btn btn-primary" type="submit">Login</button>
-</EditForm>
+<ul class="nav nav-tabs mb-3">
+    <li class="nav-item">
+        <a class="nav-link @(activeTab == "login" ? "active" : "")"
+           href="#"
+           @onclick="ShowLogin">
+            Login
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link @(activeTab == "register" ? "active" : "")"
+           href="#"
+           @onclick="ShowRegister">
+            Register
+        </a>
+    </li>
+</ul>
+
+@if (activeTab == "login")
+{
+    <EditForm Model="@loginModel" OnValidSubmit="DoLogin">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <input class="form-control mb-2" @bind="loginModel.Email" placeholder="Email" />
+        <input class="form-control mb-2" type="password" @bind="loginModel.Password" placeholder="Password" />
+        <button class="btn btn-primary" type="submit">Login</button>
+    </EditForm>
+}
+else
+{
+    <EditForm Model="@registerModel" OnValidSubmit="DoRegister">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <input class="form-control mb-2" @bind="registerModel.Email" placeholder="Email" />
+        <input class="form-control mb-2" type="password" @bind="registerModel.Password" placeholder="Password (min 6)" />
+        <button class="btn btn-success" type="submit">Create account</button>
+    </EditForm>
+}
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-info mt-3">@message</div>
+}
 
 @code {
-    private LoginRequest model = new();
+    private string activeTab = "login";
+    private void ShowLogin() => activeTab = "login";
+    private void ShowRegister() => activeTab = "register";
+    private string? message;
 
-    public class LoginRequest
-    {
-        public string Email { get; set; } = "";
-        public string Password { get; set; } = "";
-    }
+    private LoginRequest loginModel = new();
+    private RegisterRequest registerModel = new();
 
+    private class LoginRequest { public string Email { get; set; } = ""; public string Password { get; set; } = ""; }
+    private class RegisterRequest { public string Email { get; set; } = ""; public string Password { get; set; } = ""; }
     private class LoginResponse { public string Token { get; set; } = ""; }
 
     private async Task DoLogin()
     {
-        var res = await Http.PostAsJsonAsync("api/Auth/login", model);
+        var res = await Http.PostAsJsonAsync("api/Auth/login", loginModel);
+        if (!res.IsSuccessStatusCode) { message = "Invalid credentials."; return; }
+
+        var data = await res.Content.ReadFromJsonAsync<LoginResponse>();
+        if (!string.IsNullOrWhiteSpace(data?.Token))
+        {
+            await LocalStorage.SetItemAsync("authToken", data.Token);
+            Nav.NavigateTo("/");
+        }
+    }
+
+    private async Task DoRegister()
+    {
+        var res = await Http.PostAsJsonAsync("api/Auth/register", registerModel);
         if (res.IsSuccessStatusCode)
         {
-            var data = await res.Content.ReadFromJsonAsync<LoginResponse>();
-            if (data?.Token is { Length: > 0 })
-            {
-                await LocalStorage.SetItemAsync("authToken", data.Token);
-                var token = await LocalStorage.GetItemAsStringAsync("authToken");
-                await LocalStorage.RemoveItemAsync("authToken");
-                Nav.NavigateTo("/");
-            }
+            message = "Registration successful. Please login.";
+            activeTab = "login";
+        }
+        else
+        {
+            message = "Registration failed.";
         }
     }
 }

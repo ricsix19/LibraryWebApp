@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "LibraryWebApp",
   "resources": {
-    "hash": "sha256-nYgQhJop2eGKzesZ7TmumVG+GTKz0rtxhVZm3z3Zk1o=",
+    "hash": "sha256-0htDa9/1UJtwMEWg84/dc1WAlmEHVlQ78ilj1HNJVUQ=",
     "fingerprinting": {
       "Blazored.LocalStorage.12n6dz54qr.wasm": "Blazored.LocalStorage.wasm",
       "Microsoft.AspNetCore.Authorization.esv38zo127.wasm": "Microsoft.AspNetCore.Authorization.wasm",
@@ -202,10 +202,10 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "LibraryApp.Shared.xo95nhxe45.wasm": "LibraryApp.Shared.wasm",
-      "LibraryApp.Shared.wv0fiv3b67.pdb": "LibraryApp.Shared.pdb",
-      "LibraryWebApp.j6iurvaz2j.wasm": "LibraryWebApp.wasm",
-      "LibraryWebApp.dj3f6c6l6c.pdb": "LibraryWebApp.pdb"
+      "LibraryApp.Shared.f8s2x074o6.wasm": "LibraryApp.Shared.wasm",
+      "LibraryApp.Shared.w6fru356z7.pdb": "LibraryApp.Shared.pdb",
+      "LibraryWebApp.qcp22yxhln.wasm": "LibraryWebApp.wasm",
+      "LibraryWebApp.h4e5wgtftj.pdb": "LibraryWebApp.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.8bti36lthm.js": "sha256-HFADmT26AarHu4tMjFaTPxINmQjBJGtdPN+CKjtNMFE="
@@ -416,12 +416,12 @@
       "WindowsBase.tuf34ieu7y.wasm": "sha256-Bd+l972cOS1eVeLzrQNlgD6LPWV1QXBSzJhv8Tx1WGI=",
       "mscorlib.5q5u0swn6q.wasm": "sha256-g9cI1sECkF7bxMqOSB+W0a4utdDsqTrqZzyiAEeA65g=",
       "netstandard.w8gk1pigg1.wasm": "sha256-QFR5QNPfvyZTexW3IA/AFx6ZmIF/TecvOUsSK4gM4po=",
-      "LibraryApp.Shared.xo95nhxe45.wasm": "sha256-r1RZkPaLuODzMLcTtiSZQ6sTBny5tFomxG5FMCi84Qc=",
-      "LibraryWebApp.j6iurvaz2j.wasm": "sha256-i+5K3dJQy95jCVZr+I0ev0lTjrNdmDb7JKUb8kl55Ac="
+      "LibraryApp.Shared.f8s2x074o6.wasm": "sha256-byyCXJk15449ea7oitAQBRXUlyaiIkkfY21Iaw2qB6Q=",
+      "LibraryWebApp.qcp22yxhln.wasm": "sha256-2kbzWs/ZEslPWM3RtPhrAKPuyxkVBhOeuQM+VbmEpzA="
     },
     "pdb": {
-      "LibraryApp.Shared.wv0fiv3b67.pdb": "sha256-PNBdm1Dn3iU4dczSJmNpYYlABpCtSW7iL9SWXeusDTg=",
-      "LibraryWebApp.dj3f6c6l6c.pdb": "sha256-qdVfTxmBpKJFtnlkonO8ucHmsu2fK+wnBRJOE74znGw="
+      "LibraryApp.Shared.w6fru356z7.pdb": "sha256-WOB7PTFgGoWBdoodoDs7jkkh1Qq6xlzRS1w3G8uW4Ac=",
+      "LibraryWebApp.h4e5wgtftj.pdb": "sha256-Pzk6NKEEcCfaZBN26ihKoqHVjhEnWGlvFhoTATTm1eI="
     }
   },
   "cacheBootResources": true,

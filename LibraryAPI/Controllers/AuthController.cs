@@ -41,13 +41,6 @@ public class AuthController : ControllerBase
         var user = new IdentityUser {UserName = request.Email, Email = request.Email};
         var result = await _userManager.CreateAsync(user, request.Password);
         if (!result.Succeeded) return BadRequest(result.Errors);
-
-        if (request.AsAdmin)
-        {
-            if (!await _roleManager.RoleExistsAsync("Admin")) 
-                await _roleManager.CreateAsync(new IdentityRole("Admin"));
-            await _userManager.AddToRoleAsync(user, "Admin");
-        }
         
         return Ok();
     }
