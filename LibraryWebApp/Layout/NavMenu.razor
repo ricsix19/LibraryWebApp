@@ -1,4 +1,8 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject NavigationManager Nav
+
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">LibraryWebApp</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -10,8 +14,8 @@
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="nav flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="login">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Login
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
             </NavLink>
         </div>
         <div class="nav-item px-3">
@@ -19,27 +23,103 @@
                 <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Books
             </NavLink>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="readers">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Readers
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="loans">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Loan
-            </NavLink>
-        </div>
+        
+        @if (isAdmin)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="readers">
+                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Readers
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="loans">
+                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Loan
+                </NavLink>
+            </div>
+        }
+        
+        @if (!isAuthenticated)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="login">
+                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Login / Register
+                </NavLink>
+            </div>
+        }
+        else
+        {
+            <div class="nav-item px-3">
+                <a class="nav-link" href="#" @onclick="Logout">
+                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Logout
+                </a>
+            </div>
+        }
     </nav>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
-
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private bool isAuthenticated;
+    private bool isAdmin;
 
+    protected override async Task OnInitializedAsync()
+    {
+        await RefreshAuthState();
+    }
+    
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
 
+    private async Task RefreshAuthState()
+    {
+        var token = await LocalStorage.GetItemAsStringAsync("authToken");
+        isAuthenticated = !string.IsNullOrWhiteSpace(token);
+
+        isAdmin = false;
+        if (isAuthenticated)
+        {
+            try
+            {
+                var raw = token.Trim('"');
+                var payload = raw.Split('.')[1];
+                var json = System.Text.Json.JsonSerializer.Deserialize<System.Text.Json.Nodes.JsonObject>(
+                    System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(Pad64(payload))));
+                var roles = new List<string>();
+
+                if (json?["role"] is { } roleNode)
+                {
+                    if (roleNode.GetValueKind() == System.Text.Json.JsonValueKind.Array)
+                    {
+                        roles = roleNode.AsArray().Select(x => x!.ToString()).ToList();
+                    }
+                    else
+                    {
+                        roles = new List<string> { roleNode.ToString() };
+                    }
+
+                    isAdmin = roles.Contains("Admin");
+                }
+            } catch {}
+        }
+        StateHasChanged();
+    }
+
+    private static string Pad64(string s)
+    {
+        //base64url -> base64
+
+        s = s.Replace('-', '+').Replace('_', '/');
+        return s.PadRight(s.Length + (4 - s.Length % 4) % 4, '=');
+    }
+
+    private async Task Logout()
+    {
+        await LocalStorage.RemoveItemAsync("authToken");
+        isAuthenticated = false;
+        isAdmin = false;
+        Nav.NavigateTo("/");
+    }
 }

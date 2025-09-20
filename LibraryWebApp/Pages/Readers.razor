@@ -1,6 +1,8 @@
 ﻿@page "/readers"
+@using Blazored.LocalStorage
 @using LibraryApp.Shared.Models
 @inject HttpClient Http
+@inject ILocalStorageService LocalStorage
 
 <h3>Readers</h3>
 @if (readers == null)
@@ -15,14 +17,14 @@ else
             <th>Name</th>
             <th>Location</th>
             <th>Date of Birth</th>
-            <th>Actions</th>
+            @if(isAdmin){<th>Actions</th>}
         </tr>
         </thead>
         <tbody>
         @foreach (var reader in readers)
         {
             <tr>
-                @if (editReader != null && editReader.Id == reader.Id)
+                @if (isAdmin && editReader != null && editReader.Id == reader.Id)
                 {
                     <td colspan="3">
                         <EditForm Model="@editReader" OnValidSubmit="()=>UpdateReader(editReader.Id)">
@@ -40,44 +42,82 @@ else
                     <td>@reader.Name</td>
                     <td>@reader.Location</td>
                     <td>@reader.DateOfBirth</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(reader)">Edit</button>
-                        <button class="btn btn-danger btn-sm" @onclick="() => DeleteReader(reader.Id)">🗑️</button>
-                    </td>
+                    @if (isAdmin){       
+                        <td>
+                            <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(reader)">Edit</button>
+                            <button class="btn btn-danger btn-sm" @onclick="() => DeleteReader(reader.Id)">🗑️</button>
+                        </td>
+                    }
                 }
             </tr>
         }
         </tbody>
     </table>
 }
+@if (isAdmin)
+{
+    <h4>Add new Reader</h4>
 
-<h4>Add new Reader</h4>
+    <EditForm Model="@newReader" OnValidSubmit="AddReader">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
 
-<EditForm Model="@newReader" OnValidSubmit="AddReader">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+        <div class="mb-2">
+            <input class="form-control" @bind="newReader.Name" placeholder="Name" />
+        </div>
+        <div class="mb-2">
+            <input class="form-control" @bind="newReader.Location" placeholder="Location" />
+        </div>
+        <div class="mb-2">
+            <input class="form-control" type="number" @bind="newReader.DateOfBirth" placeholder="Date of Birth" />
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </EditForm>
 
-    <div class="mb-2">
-        <input class="form-control" @bind="newReader.Name" placeholder="Name" />
-    </div>
-    <div class="mb-2">
-        <input class="form-control" @bind="newReader.Location" placeholder="Location" />
-    </div>
-    <div class="mb-2">
-        <input class="form-control" type="number" @bind="newReader.DateOfBirth" placeholder="Date of Birth" />
-    </div>
-    <button class="btn btn-primary" type="submit">Add</button>
-</EditForm>
-
+}
 @code 
 {
     private List<Reader>? readers;
     private Reader newReader = new();
     private Reader? editReader = new();
+    private bool isAdmin;
 
     protected override async Task OnInitializedAsync()
     {
         readers = await Http.GetFromJsonAsync<List<Reader>>("api/Reader");
+        await ResolveAdmin();
+    }
+    
+    private async Task ResolveAdmin()
+    {
+        var token = await LocalStorage.GetItemAsStringAsync("authToken");
+        isAdmin = HasAdminRole(token);
+    }
+    
+    private static bool HasAdminRole(string? token)
+    {
+        if (string.IsNullOrWhiteSpace(token)) return false;
+        try
+        {
+            var payload = token.Trim('"').Split('.')[1];
+            var json = System.Text.Json.JsonDocument.Parse(
+                    System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(Pad64(payload))))
+                .RootElement;
+            if (json.TryGetProperty("role", out var roleProp))
+            {
+                if (roleProp.ValueKind == System.Text.Json.JsonValueKind.Array)
+                    return roleProp.EnumerateArray().Any(x => x.GetString() == "Admin");
+                return roleProp.GetString() == "Admin";
+            }
+        }
+        catch { }
+        return false;
+    }
+
+    private static string Pad64(string s)
+    {
+        s = s.Replace('-', '+').Replace('_', '/');
+        return s.PadRight(s.Length + (4 - s.Length % 4) % 4, '=');
     }
 
     private async Task AddReader()

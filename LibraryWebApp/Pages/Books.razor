@@ -1,6 +1,8 @@
 ﻿@page "/books"
+@using Blazored.LocalStorage
 @using LibraryApp.Shared.Models
 @inject HttpClient Http
+@inject ILocalStorageService LocalStorage
 
 <h3>Books</h3>
 
@@ -17,14 +19,17 @@ else
             <th>Author</th>
             <th>Publisher</th>
             <th>Release Year</th>
-            <th>Actions</th>    
+            @if (isAdmin)
+            {
+                <th>Actions</th>
+            }
         </tr>
         </thead>
         <tbody>
         @foreach (var book in books)
         {
             <tr>
-                @if (editBook != null && editBook.Id == book.Id)
+                @if (isAdmin && editBook != null && editBook.Id == book.Id)
                 {
                     <td colspan="4">
                         <EditForm Model="@editBook" OnValidSubmit="()=>UpdateBook(editBook.Id)">
@@ -44,48 +49,86 @@ else
                     <td>@book.Author</td>
                     <td>@book.Publisher</td>
                     <td>@book.ReleaseYear</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(book)">Edit</button>
-                        <button class="btn btn-danger btn-sm ms-1" @onclick="() => DeleteBook(book.Id)">🗑️</button>
-                    </td>
+                    @if (isAdmin)
+                    {
+                        <td>
+                            <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(book)">Edit</button>
+                            <button class="btn btn-danger btn-sm ms-1" @onclick="() => DeleteBook(book.Id)">🗑️</button>
+                        </td>
+                    }
                 }
             </tr>
         }
         </tbody>
     </table>
 }
+@if (isAdmin)
+{
+    <h4>Add a new book</h4>
 
-<h4>Add a new book</h4>
+    <EditForm Model="@newBook" OnValidSubmit="AddBook">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
 
-<EditForm Model="@newBook" OnValidSubmit="AddBook">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <div class="mb-2">
-        <input class="form-control" @bind="newBook.Title" placeholder="Title" />
-    </div>
-    <div class="mb-2">
-        <input class="form-control" @bind="newBook.Author" placeholder="Author" />
-    </div>
-    <div class="mb-2">
-        <input class="form-control" @bind="newBook.Publisher" placeholder="Publisher" />
-    </div>
-    <div class="mb-2">
-        <input class="form-control" type="number" @bind="newBook.ReleaseYear" placeholder="Release Year" />
-    </div>
-    <button class="btn btn-primary" type="submit">Add</button>
-</EditForm>
-
+        <div class="mb-2">
+            <input class="form-control" @bind="newBook.Title" placeholder="Title" />
+        </div>
+        <div class="mb-2">
+            <input class="form-control" @bind="newBook.Author" placeholder="Author" />
+        </div>
+        <div class="mb-2">
+            <input class="form-control" @bind="newBook.Publisher" placeholder="Publisher" />
+        </div>
+        <div class="mb-2">
+            <input class="form-control" type="number" @bind="newBook.ReleaseYear" placeholder="Release Year" />
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </EditForm>
+}
 @code {
     private List<Book>? books;
     private Book newBook = new();
     private Book? editBook;
+    private bool isAdmin;
 
     protected override async Task OnInitializedAsync()
     {
         await LoadBooks();
+        await ResolveAdmin();
     }
 
+    private async Task ResolveAdmin()
+    {
+        var token = await LocalStorage.GetItemAsStringAsync("authToken");
+        isAdmin = HasAdminRole(token);
+    }
+    
+    private static bool HasAdminRole(string? token)
+    {
+        if (string.IsNullOrWhiteSpace(token)) return false;
+        try
+        {
+            var payload = token.Trim('"').Split('.')[1];
+            var json = System.Text.Json.JsonDocument.Parse(
+                    System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(Pad64(payload))))
+                .RootElement;
+            if (json.TryGetProperty("role", out var roleProp))
+            {
+                if (roleProp.ValueKind == System.Text.Json.JsonValueKind.Array)
+                    return roleProp.EnumerateArray().Any(x => x.GetString() == "Admin");
+                return roleProp.GetString() == "Admin";
+            }
+        }
+        catch { }
+        return false;
+    }
+
+    private static string Pad64(string s)
+    {
+        s = s.Replace('-', '+').Replace('_', '/');
+        return s.PadRight(s.Length + (4 - s.Length % 4) % 4, '=');
+    }
+    
     private async Task LoadBooks()
     {
         books = await Http.GetFromJsonAsync<List<Book>>("api/Book");

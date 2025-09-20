@@ -1,5 +1,8 @@
 ﻿@page "/loans"
+@using Blazored.LocalStorage
+@using LibraryApp.Shared.Models
 @inject HttpClient Http
+@inject ILocalStorageService LocalStorage
 
 <h3>Loans</h3>
 
@@ -17,14 +20,17 @@ else
             <th>Book ID</th>
             <th>Loan out date</th>
             <th>Return date</th>
-            <th>Actions</th>
+            @if (isAdmin)
+            {
+                <th>Actions</th>           
+            }
         </tr>
         </thead>
         <tbody>
         @foreach (var loan in loans)
         {
             <tr>
-                @if (editLoan != null && editLoan.Id == loan.Id)
+                @if (isAdmin && editLoan != null && editLoan.Id == loan.Id)
                 {
                     <td colspan="4">
                         <EditForm Model="@editLoan" OnValidSubmit="()=>UpdateLoan(editLoan.Id)">
@@ -44,37 +50,43 @@ else
                     <td>@loan.BookId</td>
                     <td>@loan.LoanDate</td>
                     <td>@loan.LoanReturnDate</td>
-                    <td>
-                        <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(loan)">Edit</button>
-                        <button class="btn btn-danger btn-sm ms-1" @onclick="() => DeleteLoan(loan.Id)">🗑️</button>
-                    </td>
+                    @if (isAdmin)
+                    {
+                        <td>
+                            <button class="btn btn-primary btn-sm" @onclick="() => StartEdit(loan)">Edit</button>
+                            <button class="btn btn-danger btn-sm ms-1" @onclick="() => DeleteLoan(loan.Id)">🗑️</button>
+                        </td>
+                    }
                 }
             </tr>
         }
     </tbody>
     </table>
 }
+@if (isAdmin)
+{
+    <h4>New Loan</h4>
 
-<h4>New Loan</h4>
+    <EditForm Model="@newLoan" OnValidSubmit="AddLoan">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
 
-<EditForm Model="@newLoan" OnValidSubmit="AddLoan">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <div class="mb-2">
-        <input class="form-control" type="number" @bind="newLoan.UserId" placeholder="Reader ID" />
-    </div>
-    <div class="mb-2">
-        <input class="form-control" type="number" @bind="newLoan.BookId" placeholder="Book ID" />
-    </div>
-    <div class="mb-2">
-        <input class="form-control" type="date" @bind="newLoan.LoanDate" />
-    </div>
-    <div class="mb-2">
-        <input class="form-control" type="date" @bind="newLoan.LoanReturnDate" />
-    </div>
-    <button class="btn btn-primary" type="submit">Loan out</button>
-</EditForm>
+        <div class="mb-2">
+            <input class="form-control" type="number" @bind="newLoan.UserId" placeholder="Reader ID" />
+        </div>
+        <div class="mb-2">
+            <input class="form-control" type="number" @bind="newLoan.BookId" placeholder="Book ID" />
+        </div>
+        <div class="mb-2">
+            <input class="form-control" type="date" @bind="newLoan.LoanDate" />
+        </div>
+        <div class="mb-2">
+            <input class="form-control" type="date" @bind="newLoan.LoanReturnDate" />
+        </div>
+        <button class="btn btn-primary" type="submit">Loan out</button>
+    </EditForm>
+   
+}
 
 @code
 {
@@ -87,12 +99,46 @@ else
     };
 
     private LibraryApp.Shared.Models.Loan editLoan = new();
+    private bool isAdmin;
     
     protected override async Task OnInitializedAsync()
     {
         loans = await Http.GetFromJsonAsync<List<LibraryApp.Shared.Models.Loan>>("api/Loan");
+        await ResolveAdmin();
     }
 
+    private async Task ResolveAdmin()
+    {
+        var token = await LocalStorage.GetItemAsStringAsync("authToken");
+        isAdmin = HasAdminRole(token);
+    }
+    
+    private static bool HasAdminRole(string? token)
+    {
+        if (string.IsNullOrWhiteSpace(token)) return false;
+        try
+        {
+            var payload = token.Trim('"').Split('.')[1];
+            var json = System.Text.Json.JsonDocument.Parse(
+                    System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(Pad64(payload))))
+                .RootElement;
+            if (json.TryGetProperty("role", out var roleProp))
+            {
+                if (roleProp.ValueKind == System.Text.Json.JsonValueKind.Array)
+                    return roleProp.EnumerateArray().Any(x => x.GetString() == "Admin");
+                return roleProp.GetString() == "Admin";
+            }
+        }
+        catch { }
+        return false;
+    }
+
+    private static string Pad64(string s)
+    {
+        s = s.Replace('-', '+').Replace('_', '/');
+        return s.PadRight(s.Length + (4 - s.Length % 4) % 4, '=');
+    }
+    
     private async Task AddLoan()
     {
         var response = await Http.PostAsJsonAsync("api/Loan", newLoan);
