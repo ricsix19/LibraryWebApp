@@ -2,6 +2,7 @@
 using LibraryAPI.Interfaces;
 using LibraryAPI.Services;
 using LibraryApp.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ namespace LibraryAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class BookController : ControllerBase
 {
     private readonly ILogger<IBookService> _logger;
@@ -21,10 +23,11 @@ public class BookController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<Book>>> GetAllBooksAsync()
     {
         var books = await _bookService.GetAllBooksAsync();
-        return Ok(books); //200-as http informaci kod generalas hogy sikeresen lekertuk az osszes konyvet
+        return Ok(books); //200-as http informacios kod generalas hogy sikeresen lekertuk az osszes konyvet
     }
 
     [HttpGet("{id:int}")]
@@ -40,6 +43,7 @@ public class BookController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<Book>> CreateBookAsync(Book book)
     {
         _logger.LogInformation("Creating book: {0}", book?.Title);
@@ -69,6 +73,7 @@ public class BookController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateBookAsync(int id, Book book)
     {
         if (book == null || id != book.Id)
@@ -86,6 +91,7 @@ public class BookController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteBookAsync(int id)
     {
         var existing = await _bookService.GetBookById(id);

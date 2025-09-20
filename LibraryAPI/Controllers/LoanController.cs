@@ -1,6 +1,7 @@
 ﻿using LibraryAPI.Data;
 using LibraryAPI.Interfaces;
 using LibraryApp.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ namespace LibraryAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class LoanController: ControllerBase
 {
     private readonly ILogger<ILoanService> _logger;
@@ -20,6 +22,7 @@ public class LoanController: ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<Loan>>> GetLoan()
     {
         var loans = await _loanService.GetAllLoansAsync();
@@ -47,6 +50,7 @@ public class LoanController: ControllerBase
     }
     
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<Loan>> PostLoan(Loan loan)
     {
         if (loan == null)
@@ -74,6 +78,7 @@ public class LoanController: ControllerBase
     }
     
     [HttpPut("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateLoanAsync(int id, Loan loan)
     {
         if (loan == null || id != loan.Id)
@@ -92,6 +97,7 @@ public class LoanController: ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteLoan(int id)
     {
         var existing = await _loanService.GetLoanAsync(id);

@@ -1,6 +1,7 @@
 ﻿using LibraryAPI.Data;
 using LibraryAPI.Interfaces;
 using LibraryApp.Shared.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ namespace LibraryAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class ReaderController : ControllerBase
 {
      private readonly ILogger<IReaderService> _logger;
@@ -20,6 +22,7 @@ public class ReaderController : ControllerBase
     }
 
     [HttpGet]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<Reader>>> GetReadersAsync()
     {
         var readers = await _readerService.GetAllReadersAsync();
@@ -39,6 +42,7 @@ public class ReaderController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<Reader>> CreateReaderAsync(Reader reader)
     {
         if (reader == null)
@@ -65,6 +69,7 @@ public class ReaderController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateReaderAsync(int id, Reader reader)
     {
         if (reader == null || id != reader.Id)
@@ -83,6 +88,7 @@ public class ReaderController : ControllerBase
     }
 
     [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteReaderAsync(int id)
     {
         var existing = await _readerService.GetReaderAsync(id);
