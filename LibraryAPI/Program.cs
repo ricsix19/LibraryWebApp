@@ -34,7 +34,7 @@ builder.Services
     .AddEntityFrameworkStores<LibraryDB>()
     .AddSignInManager();
 
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "devkeyforproject";
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "LhvTZgy6wD8jFoihvEacE9PH+C0RrGMemwnD7Bx6a0E=";
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "LibraryAPI";
 var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
 

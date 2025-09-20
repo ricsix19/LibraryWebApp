@@ -30,8 +30,8 @@ public class AuthController : ControllerBase
         _config = config;    
     }
 
-    public record RegisterRequest(string Email, string Passwd, bool AsAdmin);
-    public record LoginRequest(string Email, string Passwd);
+    public record RegisterRequest(string Email, string Password, bool AsAdmin);
+    public record LoginRequest(string Email, string Password);
     public record LoginResponse(string Token);
 
     [HttpPost("register")]
@@ -39,7 +39,7 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Register(RegisterRequest request)
     {
         var user = new IdentityUser {UserName = request.Email, Email = request.Email};
-        var result = await _userManager.CreateAsync(user, request.Passwd);
+        var result = await _userManager.CreateAsync(user, request.Password);
         if (!result.Succeeded) return BadRequest(result.Errors);
 
         if (request.AsAdmin)
@@ -59,7 +59,7 @@ public class AuthController : ControllerBase
         var user = await _userManager.FindByEmailAsync(request.Email);
         if (user == null) return Unauthorized();
         
-        var check = await _signInManager.CheckPasswordSignInAsync(user, request.Passwd, false);
+        var check = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
         if (!check.Succeeded) return Unauthorized();
 
         var roles = await _userManager.GetRolesAsync(user);
@@ -69,7 +69,7 @@ public class AuthController : ControllerBase
 
     private string GenerateJwt(IdentityUser user, IEnumerable<string> roles)
     {
-        var key = _config["Jwt:Key"] ?? "devkeyforproject";
+        var key = _config["Jwt:Key"] ?? "LhvTZgy6wD8jFoihvEacE9PH+C0RrGMemwnD7Bx6a0E=";
         var issuer = _config["Jwt:Issuer"] ?? "LibraryAPI";
         var credentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)), SecurityAlgorithms.HmacSha256);
 
