@@ -32,12 +32,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Loan.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9hbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mamut/RiderProjects/LibraryWebApp/LibraryWebApp/Pages/Readers.razor]

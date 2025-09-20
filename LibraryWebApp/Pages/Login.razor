@@ -1,0 +1,41 @@
+﻿@page "/login"
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject HttpClient Http
+@inject NavigationManager Nav
+
+<h3>Login</h3>
+
+<EditForm Model="@model" OnValidSubmit="DoLogin">
+    <DataAnnotationsValidator />
+    <input class="form-control mb-2" @bind="model.Email" placeholder="Email" />
+    <input class="form-control mb-2" type="password" @bind="model.Password" placeholder="Password" />
+    <button class="btn btn-primary" type="submit">Login</button>
+</EditForm>
+
+@code {
+    private LoginRequest model = new();
+
+    public class LoginRequest
+    {
+        public string Email { get; set; } = "";
+        public string Password { get; set; } = "";
+    }
+
+    private class LoginResponse { public string Token { get; set; } = ""; }
+
+    private async Task DoLogin()
+    {
+        var res = await Http.PostAsJsonAsync("api/Auth/login", model);
+        if (res.IsSuccessStatusCode)
+        {
+            var data = await res.Content.ReadFromJsonAsync<LoginResponse>();
+            if (data?.Token is { Length: > 0 })
+            {
+                await LocalStorage.SetItemAsync("authToken", data.Token);
+                var token = await LocalStorage.GetItemAsStringAsync("authToken");
+                await LocalStorage.RemoveItemAsync("authToken");
+                Nav.NavigateTo("/");
+            }
+        }
+    }
+}
