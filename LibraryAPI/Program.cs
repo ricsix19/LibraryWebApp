@@ -34,8 +34,8 @@ builder.Services
     .AddEntityFrameworkStores<LibraryDB>()
     .AddSignInManager();
 
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "LhvTZgy6wD8jFoihvEacE9PH+C0RrGMemwnD7Bx6a0E=";
-var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "LibraryAPI";
+var jwtKey = builder.Configuration["Jwt:Key"]!;
+var jwtIssuer = builder.Configuration["Jwt:Issuer"]!;
 var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
 
 builder.Services
@@ -51,11 +51,11 @@ builder.Services
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
             ValidIssuer = jwtIssuer,
-            ValidAudience = jwtIssuer,
+            ValidateAudience = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = signingKey,
+            ValidateLifetime = true
         };
     });
 

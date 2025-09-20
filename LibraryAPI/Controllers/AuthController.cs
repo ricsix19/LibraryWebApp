@@ -62,8 +62,8 @@ public class AuthController : ControllerBase
 
     private string GenerateJwt(IdentityUser user, IEnumerable<string> roles)
     {
-        var key = _config["Jwt:Key"] ?? "LhvTZgy6wD8jFoihvEacE9PH+C0RrGMemwnD7Bx6a0E=";
-        var issuer = _config["Jwt:Issuer"] ?? "LibraryAPI";
+        var key = _config["Jwt:Key"]!;
+        var issuer = _config["Jwt:Issuer"]!;
         var credentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)), SecurityAlgorithms.HmacSha256);
 
         var claims = new List<Claim>
