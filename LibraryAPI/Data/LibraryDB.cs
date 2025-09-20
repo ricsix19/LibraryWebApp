@@ -1,9 +1,10 @@
 ﻿using LibraryApp.Shared.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryAPI.Data;
 
-public class LibraryDB : DbContext
+public class LibraryDB : IdentityDbContext
 {
     public LibraryDB(DbContextOptions<LibraryDB> options) : base(options){}
     

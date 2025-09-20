@@ -1,7 +1,12 @@
+using System.IdentityModel.Tokens;
+using System.Text;
 using LibraryAPI.Data;
 using LibraryAPI.Interfaces;
 using LibraryAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +21,45 @@ builder.Services.AddDbContext<LibraryDB>(
         options.UseSqlite("Data Source=library.db");
         options.UseLazyLoadingProxies();
     });
+
+builder.Services
+    .AddIdentityCore<IdentityUser>(opt =>
+    {
+        opt.Password.RequireDigit = false;
+        opt.Password.RequireNonAlphanumeric = false;
+        opt.Password.RequireUppercase = false;
+        opt.Password.RequiredLength = 6;
+    })
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<LibraryDB>()
+    .AddSignInManager();
+
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "devkeyforproject";
+var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "LibraryAPI";
+var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+
+builder.Services
+    .AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false; // for development
+        options.SaveToken = true;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtIssuer,
+        };
+    });
+
+builder.Services.AddAuthorization();
 
 builder.Services.AddCors();
 builder.Services.AddControllers();
@@ -37,6 +81,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

@@ -48,6 +48,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.2, )"
@@ -70,17 +78,21 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.14.0, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[9.0.0, )"
             },
             "Swashbuckle.AspNetCore.SwaggerGen": {
               "target": "Package",
-              "version": "[8.1.1, )"
+              "version": "[9.0.4, )"
             },
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
-              "version": "[8.1.1, )"
+              "version": "[9.0.4, )"
             }
           },
           "imports": [
