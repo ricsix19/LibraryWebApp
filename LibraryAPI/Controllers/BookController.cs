@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryAPI.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
+
 public class BookController : ControllerBase
 {
     private readonly ILogger<IBookService> _logger;

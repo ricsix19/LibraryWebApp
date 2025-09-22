@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryAPI.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
+
 public class LoanController: ControllerBase
 {
     private readonly ILogger<ILoanService> _logger;

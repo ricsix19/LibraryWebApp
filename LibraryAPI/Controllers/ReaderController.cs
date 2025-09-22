@@ -7,9 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryAPI.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
-[Authorize]
+
 public class ReaderController : ControllerBase
 {
      private readonly ILogger<IReaderService> _logger;

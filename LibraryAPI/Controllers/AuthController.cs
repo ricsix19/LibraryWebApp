@@ -41,6 +41,15 @@ public class AuthController : ControllerBase
         var user = new IdentityUser {UserName = request.Email, Email = request.Email};
         var result = await _userManager.CreateAsync(user, request.Password);
         if (!result.Succeeded) return BadRequest(result.Errors);
+
+        if (request.AsAdmin)
+        {
+            if (!await _roleManager.RoleExistsAsync("Admin"))
+                await _roleManager.CreateAsync(new IdentityRole("Admin"));
+            
+            var roleAdd = await _userManager.AddToRoleAsync(user, "Admin");
+            if (!roleAdd.Succeeded) return BadRequest(roleAdd.Errors);
+        }
         
         return Ok();
     }
@@ -59,7 +68,7 @@ public class AuthController : ControllerBase
         var token = GenerateJwt(user, roles);
         return Ok(new LoginResponse(token));
     }
-
+    
     private string GenerateJwt(IdentityUser user, IEnumerable<string> roles)
     {
         var key = _config["Jwt:Key"]!;
@@ -72,7 +81,7 @@ public class AuthController : ControllerBase
             new(JwtRegisteredClaimNames.Email, user.Email ?? string.Empty),
             new(ClaimTypes.Name, user.UserName ?? string.Empty)
         };
-        claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
+        claims.AddRange(roles.Select(r => new Claim("role", r))); //itt lesz a problema
 
         var token = new JwtSecurityToken(
             issuer: issuer,

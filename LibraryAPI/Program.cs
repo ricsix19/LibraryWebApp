@@ -1,4 +1,5 @@
 using System.IdentityModel.Tokens;
+using System.Security.Claims;
 using System.Text;
 using LibraryAPI.Data;
 using LibraryAPI.Interfaces;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -55,16 +57,41 @@ builder.Services
             ValidateAudience = false,
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = signingKey,
-            ValidateLifetime = true
+            ValidateLifetime = true,
+            RoleClaimType = "role",
+            NameClaimType = ClaimTypes.NameIdentifier
         };
     });
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+});
 
 builder.Services.AddCors();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+    var securityScheme = new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "JWT Bearer token. Példa: Bearer {token}"
+    };
+    c.AddSecurityDefinition("Bearer", securityScheme);
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            securityScheme,
+            Array.Empty<string>()
+        }
+    });
+});
 
 builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<ILoanService, LoanService>();
@@ -85,7 +112,23 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-//builder.Services.AddScoped<BookService>();
+app.MapGet("/api/auth/me", (ClaimsPrincipal user) =>
+{
+    if (!user.Identity?.IsAuthenticated ?? true)
+        return Results.Unauthorized();
+
+    var claims = user.Claims.Select(c => new { c.Type, c.Value });
+    var roles = user.Claims.Where(c => c.Type == "role").Select(c => c.Value).ToArray();
+    return Results.Ok(new
+    {
+        Name = user.Identity?.Name,
+        Roles = roles,
+        Claims = claims
+    });
+}).RequireAuthorization();
+
+app.MapGet("/api/auth/is-admin", () => Results.Ok(new {ok = true}))
+    .RequireAuthorization("Admin");
 
 app.Run();
 
