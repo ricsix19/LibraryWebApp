@@ -8,9 +8,13 @@ public class Loan
     
     [Required]
     public int BookId { get; set; }
+
+    public Book Book { get; set; } = default!;
     
     [Required]
     public int UserId { get; set; }
+
+    public Reader Reader { get; set; } = default!;
     
     [Required]
     public DateTime LoanDate { get; set; }

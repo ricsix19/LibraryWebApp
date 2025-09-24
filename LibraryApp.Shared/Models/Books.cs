@@ -17,4 +17,6 @@ public class Book
     
     [Range(0, 2100)]
     public int ReleaseYear { get; set; }
+    
+    public ICollection<Loan> Loans { get; set; } = new List<Loan>();
 }

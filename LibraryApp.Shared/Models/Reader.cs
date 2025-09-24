@@ -14,4 +14,6 @@ public class Reader
     
     [Range(1900, 2100)]
     public int DateOfBirth { get; set; }
+    
+    public ICollection<Loan> Loans { get; set; } = new List<Loan>();
 }
