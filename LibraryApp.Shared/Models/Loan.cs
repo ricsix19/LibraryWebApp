@@ -9,12 +9,12 @@ public class Loan
     [Required]
     public int BookId { get; set; }
 
-    public Book Book { get; set; } = default!;
+    public virtual Book Book { get; set; } = default!;
     
     [Required]
-    public int UserId { get; set; }
+    public int ReaderId { get; set; }
 
-    public Reader Reader { get; set; } = default!;
+    public virtual Reader Reader { get; set; } = default!;
     
     [Required]
     public DateTime LoanDate { get; set; }

@@ -27,7 +27,7 @@ public class LibraryDB : IdentityDbContext
         modelBuilder.Entity<Loan>()
             .HasOne(l => l.Reader)
             .WithMany(r => r.Loans)
-            .HasForeignKey(l => l.UserId)
+            .HasForeignKey(l => l.ReaderId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

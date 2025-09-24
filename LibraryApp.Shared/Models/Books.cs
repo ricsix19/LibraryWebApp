@@ -7,16 +7,16 @@ public class Book
     public int Id { get; set; }
     
     [Required]
-    public string Title { get; set; }
+    public virtual string Title { get; set; }
     
     [Required]
-    public string Author { get; set; }
+    public virtual string Author { get; set; }
     
     [Required]
-    public string Publisher { get; set; }
+    public virtual string Publisher { get; set; }
     
     [Range(0, 2100)]
     public int ReleaseYear { get; set; }
     
-    public ICollection<Loan> Loans { get; set; } = new List<Loan>();
+    public virtual ICollection<Loan> Loans { get; set; } = new List<Loan>();
 }

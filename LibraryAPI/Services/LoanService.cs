@@ -48,7 +48,7 @@ public class LoanService : ILoanService
         }
         
         entity.Id = loan.Id;
-        entity.UserId = loan.UserId;
+        entity.ReaderId = loan.ReaderId;
         entity.BookId = loan.BookId;
         entity.LoanDate = loan.LoanDate;
         entity.LoanReturnDate = loan.LoanReturnDate;

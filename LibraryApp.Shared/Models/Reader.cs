@@ -7,13 +7,13 @@ public class Reader
     public int Id { get; set; }
     
     [Required]
-    public string Name { get; set; }
+    public virtual string Name { get; set; }
     
     [Required]
-    public string Location { get; set; }
+    public virtual string Location { get; set; }
     
     [Range(1900, 2100)]
     public int DateOfBirth { get; set; }
     
-    public ICollection<Loan> Loans { get; set; } = new List<Loan>();
+    public virtual ICollection<Loan> Loans { get; set; } = new List<Loan>();
 }

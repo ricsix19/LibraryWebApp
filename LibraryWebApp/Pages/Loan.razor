@@ -35,7 +35,7 @@ else
                     <td colspan="4">
                         <EditForm Model="@editLoan" OnValidSubmit="()=>UpdateLoan(editLoan.Id)">
                             <DataAnnotationsValidator />
-                            <input class="form-control " @bind="editLoan.UserId" />
+                            <input class="form-control " @bind="editLoan.ReaderId" />
                             <input class="form-control mt-1" @bind="editLoan.BookId" />
                             <input class="form-control mt-1" @bind="editLoan.LoanDate" />
                             <input class="form-control mt-1" @bind="editLoan.LoanReturnDate" />
@@ -46,7 +46,7 @@ else
                 }
                 else
                 {
-                    <td>@loan.UserId</td>
+                    <td>@loan.ReaderId</td>
                     <td>@loan.BookId</td>
                     <td>@loan.LoanDate</td>
                     <td>@loan.LoanReturnDate</td>
@@ -72,7 +72,7 @@ else
         <ValidationSummary />
 
         <div class="mb-2">
-            <input class="form-control" type="number" @bind="newLoan.UserId" placeholder="Reader ID" />
+            <input class="form-control" type="number" @bind="newLoan.ReaderId" placeholder="Reader ID" />
         </div>
         <div class="mb-2">
             <input class="form-control" type="number" @bind="newLoan.BookId" placeholder="Book ID" />
@@ -155,7 +155,7 @@ else
         {
             Id = loan.Id,
             BookId = loan.BookId,
-            UserId = loan.UserId,
+            ReaderId = loan.ReaderId,
             LoanDate = loan.LoanDate,
             LoanReturnDate = loan.LoanReturnDate
         };
