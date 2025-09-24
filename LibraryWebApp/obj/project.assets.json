@@ -1824,19 +1824,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mamut\\.nuget\\packages\\": {}
+    "C:\\Users\\ricsi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
+      "projectUniqueName": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
       "projectName": "LibraryWebApp",
-      "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
-      "packagesPath": "C:\\Users\\mamut\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\",
+      "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\LibraryWebApp.csproj",
+      "packagesPath": "C:\\Users\\ricsi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mamut\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ricsi\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -1848,8 +1848,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
-              "projectPath": "C:\\Users\\mamut\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj"
+            "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj": {
+              "projectPath": "C:\\Users\\ricsi\\RiderProjects\\LibraryWebApp\\LibraryApp.Shared\\LibraryApp.Shared.csproj"
             }
           }
         }

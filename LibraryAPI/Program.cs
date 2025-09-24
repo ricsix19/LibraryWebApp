@@ -58,7 +58,7 @@ builder.Services
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = signingKey,
             ValidateLifetime = true,
-            RoleClaimType = "role",
+            RoleClaimType = ClaimTypes.Role,
             NameClaimType = ClaimTypes.NameIdentifier
         };
     });
@@ -112,13 +112,19 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-app.MapGet("/api/auth/me", (ClaimsPrincipal user) =>
+app.MapGet("/api/auth/me", (HttpContext ctx, ClaimsPrincipal user) =>
 {
     if (!user.Identity?.IsAuthenticated ?? true)
         return Results.Unauthorized();
 
     var claims = user.Claims.Select(c => new { c.Type, c.Value });
-    var roles = user.Claims.Where(c => c.Type == "role").Select(c => c.Value).ToArray();
+    var roleType = ctx.RequestServices
+        .GetRequiredService<Microsoft.AspNetCore.Authentication.IAuthenticationSchemeProvider>();
+    var roles = user.Claims
+        .Where(c => c.Type == ClaimTypes.Role)
+        .Select(c => c.Value)
+        .ToArray();
+
     return Results.Ok(new
     {
         Name = user.Identity?.Name,

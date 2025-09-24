@@ -4,7 +4,7 @@
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">LibraryWebApp</a>
+        <a class="navbar-brand" href="">Library Web Database</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,13 +14,8 @@
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="nav flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <NavLink class="nav-link" href="home">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="books">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Books
             </NavLink>
         </div>
         
@@ -37,7 +32,14 @@
                 </NavLink>
             </div>
         }
-        
+        @if (isLoggedIn)
+        {
+                <div class="nav-item px-3">
+            <NavLink class="nav-link" href="books">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Books
+            </NavLink>
+        </div>  
+        }
         @if (!isAuthenticated)
         {
             <div class="nav-item px-3">
@@ -62,6 +64,7 @@
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
     private bool isAuthenticated;
     private bool isAdmin;
+    private bool isLoggedIn;
 
     protected override async Task OnInitializedAsync()
     {
@@ -81,6 +84,7 @@
         isAdmin = false;
         if (isAuthenticated)
         {
+            isLoggedIn = true;
             try
             {
                 var raw = token.Trim('"');
@@ -105,6 +109,7 @@
             } catch {}
         }
         StateHasChanged();
+        
     }
 
     private static string Pad64(string s)
@@ -120,6 +125,7 @@
         await LocalStorage.RemoveItemAsync("authToken");
         isAuthenticated = false;
         isAdmin = false;
-        Nav.NavigateTo("/login");
+        isLoggedIn = false;
+        Nav.NavigateTo("home", true);
     }
 }

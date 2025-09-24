@@ -81,7 +81,7 @@ public class AuthController : ControllerBase
             new(JwtRegisteredClaimNames.Email, user.Email ?? string.Empty),
             new(ClaimTypes.Name, user.UserName ?? string.Empty)
         };
-        claims.AddRange(roles.Select(r => new Claim("role", r))); //itt lesz a problema
+        claims.AddRange(roles.Select(r => new Claim("role", r)));
 
         var token = new JwtSecurityToken(
             issuer: issuer,
