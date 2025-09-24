@@ -45,7 +45,7 @@ public class LoanController: ControllerBase
     public async Task<ActionResult<IEnumerable<Loan>>> GetLoanByReaderIdAsync(int readerId)
     {
         var loans = await _loanService.GetAllLoansAsync();
-        var filteredLoans = loans.Where(l => l.ReaderId == readerId).ToList();
+        var filteredLoans = loans.Where(l => l.UserId == readerId).ToList();
         return Ok(filteredLoans);
     }
     

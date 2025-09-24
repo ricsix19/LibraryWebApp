@@ -19,14 +19,14 @@ public class LoanServiceTest
     {
         var context = GetInMemoryDbContext();
         var service = new LoanService(logger: null, context);
-        var loan = new Loan { BookId = 1, ReaderId = 1, LoanDate = DateTime.Now.Date };
+        var loan = new Loan { BookId = 1, UserId = 1, LoanDate = DateTime.Now.Date };
         
         var result = await service.AddLoanAsync(loan);
         var loans = await service.GetAllLoansAsync();
 
         Assert.Single(loans);
         Assert.Equal(1, loans[0].BookId);
-        Assert.Equal(1, loans[0].ReaderId);
+        Assert.Equal(1, loans[0].UserId);
         Assert.Equal(DateTime.Now.Date, loans[0].LoanDate.Date);
     }
 
@@ -35,7 +35,7 @@ public class LoanServiceTest
     {
         var context = GetInMemoryDbContext();
         var service = new LoanService(logger: null, context);
-        var loan = new Loan { BookId = 1, ReaderId = 1, LoanDate = DateTime.Now };
+        var loan = new Loan { BookId = 1, UserId = 1, LoanDate = DateTime.Now };
         await service.AddLoanAsync(loan);
         
         var result = await service.DeleteLoanAsync(loan.Id);

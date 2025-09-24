@@ -12,7 +12,7 @@ public class Loan
     public virtual Book Book { get; set; } = default!;
     
     [Required]
-    public int ReaderId { get; set; }
+    public int UserId { get; set; }
 
     public virtual Reader Reader { get; set; } = default!;
     
